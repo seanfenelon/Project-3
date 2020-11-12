@@ -25,7 +25,6 @@ mongoose.connect(
             passwordConfirmation: 'admin',
             isAdmin: true
           }
-
         ])
       })
 
