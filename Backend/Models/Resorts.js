@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-// hmm not working hmmm
+// hmm not working hmmmmm
 const resortSchema = new mongoose.Schema({
   name: { type: String, required: true },
   country: { type: String, required: true },
