@@ -4,7 +4,15 @@ const axios = require('axios')
 function singleProxyResort(req, res) {
 }
 
-function getResort(req, res) {
+function getResorts(req, res) {
+
+  Resorts
+    .find()
+    // .populate('user')
+    .then(resorts => {
+      res.send(resorts)
+    })
+
 }
 
 function addResort(req, res) {
@@ -17,6 +25,18 @@ function addResort(req, res) {
 }
 
 function singleResort(req, res) {
+
+  const name = req.params.name
+
+  Resorts.
+    findOne({ name: name })
+    // .populate('comments.user')
+    .then(resort => {
+
+      res.send(resort)
+
+    })
+    .catch(error => res.send(error))
 
 }
 
@@ -58,7 +78,7 @@ function deleteComment(req, res) {
 
 module.exports = {
   singleProxyResort,
-  getResort,
+  getResorts,
   addResort,
   singleResort,
   removeResort,
