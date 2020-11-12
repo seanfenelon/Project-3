@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const Resorts = require('./models/Resorts')
-const User = require('./models/User')
+const Resorts = require('./Models/Resorts')
+const User = require('./Models/User')
 
 const axios = require('axios')
 
@@ -33,7 +33,7 @@ mongoose.connect(
         return users
       })
 
-      .then(() => {
+      .then((users) => {
         return Resorts.create([
 
           {
@@ -42,7 +42,8 @@ mongoose.connect(
             top_elevation: 3568,
             bottom_elevation: 1650,
             lon: 6.1218,
-            lat: 45.0076
+            lat: 45.0076,
+            user: users[0]
           }
 
         ])

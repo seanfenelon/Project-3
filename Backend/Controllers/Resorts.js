@@ -8,8 +8,10 @@ function getResorts(req, res) {
 
   Resorts
     .find()
-    // .populate('user')
+    .populate('user')
     .then(resorts => {
+      console.log('here')
+      console.log(resorts)
       res.send(resorts)
     })
 
