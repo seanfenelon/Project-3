@@ -5,7 +5,7 @@ const userController = require('./Controllers/Users')
 const secureRoute = require('./Middleware/SecureRoute')
 
 router.route('/resorts')
-  .get(resortsController.getResort)
+  .get(resortsController.getResorts)
   .post(secureRoute, resortsController.addResort)
 
 // ! Get clarification over the purpose of this
