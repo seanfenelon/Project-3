@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+// hmm not working
 const resortSchema = new mongoose.Schema({
   name: { type: String, required: true },
   country: { type: String, required: true },
