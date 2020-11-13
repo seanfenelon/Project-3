@@ -1,4 +1,5 @@
-// const hello = 'world'
+const secret = 'Goof luck guessing our secret'
 
-
-// module.exports = { hello }
+module.exports = {
+  secret
+}
