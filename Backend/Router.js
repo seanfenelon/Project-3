@@ -17,14 +17,14 @@ router.route('/resorts')
 //   .delete(secureRoute, resortsController.removeResort)
 //   .put(secureRoute, resortsController.editResort)
 
-router.route('/joinus')
-  .post(userController.createUser)
+// router.route('/joinus')
+//   .post(userController.createUser)
 
-router.route('/login')
-  .post(userController.logInUser)
+// router.route('/login')
+//   .post(userController.logInUser)
 
-// router.route('/resorts/:resortId/comments')
-//   .post(secureRoute, resortsController.createComment)
+router.route('/resorts/:resortId/comments')
+  .post(resortsController.createComment)
 
 // router.route('/resorts/:resortId/comments/:commentId')
 //   .put(secureRoute, resortsController.editComment)
