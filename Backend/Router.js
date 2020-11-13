@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const resortsController = require('./Controllers/Resorts')
-const userController = require('./Controllers/Users')
-const secureRoute = require('./Middleware/SecureRoute')
+const resortsController = require('./controllers/resorts')
+const userController = require('./controllers/users')
+const secureRoute = require('./middleware/secureRoute')
 
 router.route('/resorts')
   .get(resortsController.getResorts)

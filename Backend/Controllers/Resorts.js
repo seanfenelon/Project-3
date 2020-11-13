@@ -1,4 +1,4 @@
-const Resorts = require('../Models/Resorts')
+const Resorts = require('../models/resorts')
 const axios = require('axios')
 
 function singleProxyResort(req, res) {

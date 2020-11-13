@@ -1,6 +1,6 @@
-const User = require('../Models/User')
+const User = require('../models/user')
 const jwt = require('jsonwebtoken')
-const { secret } = require('../Config/Environment')
+const { secret } = require('../config/environment')
 
 function createUser(req, res) {
   const body = req.body
