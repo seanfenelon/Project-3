@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 const User = require('../models/user')
-
+//hmm
 function secureRoute(req, res, next) {
   const authToken = req.headers.authorization
   console.log('in the secure route')
