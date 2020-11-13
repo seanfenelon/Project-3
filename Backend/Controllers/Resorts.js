@@ -95,7 +95,6 @@ function createComment(req, res) {
 }
 
 
-
 function editComment(req, res) {
 
   const id = req.params.resortId
