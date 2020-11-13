@@ -6,7 +6,7 @@ const secureRoute = require('./Middleware/SecureRoute')
 
 router.route('/resorts')
   .get(resortsController.getResorts)
-  // .post(secureRoute, resortsController.addResort)
+  .post(/*secureRoute*/resortsController.addResort)
 
 // ! Get clarification over the purpose of this
 // router.route('/resorts-proxy/:name')
@@ -23,11 +23,11 @@ router.route('/joinus')
 router.route('/login')
   .post(userController.logInUser)
 
-// router.route('/resorts/:resortId/comments')
-//   .post(secureRoute, resortsController.createComment)
+router.route('/resorts/:resortId/comments')
+  .post(secureRoute, resortsController.createComment)
 
-// router.route('/resorts/:resortId/comments/:commentId')
-//   .put(secureRoute, resortsController.editComment)
-//   .delete(secureRoute, resortsController.deleteComment)
+router.route('/resorts/:resortId/comments/:commentId')
+  .put(secureRoute, resortsController.editComment)
+  .delete(secureRoute, resortsController.deleteComment)
 
 module.exports = router
