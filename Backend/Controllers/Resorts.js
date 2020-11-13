@@ -100,7 +100,7 @@ function editComment(req, res) {
   const id = req.params.resortId
 
   Resorts
-    .findOne({ id: id })
+    .findOne({ _id: id })
     .populate('comments.user')
     .then(resort => {
       console.log(resort)
@@ -131,7 +131,7 @@ function deleteComment(req, res) {
   req.body.user = req.currentUser
 
   Resorts
-    .findOne({ id: id })
+    .findOne({ _id: id })
     .populate('comments.user')
     .then(resort => {
 
@@ -139,7 +139,7 @@ function deleteComment(req, res) {
 
       const comment = resort.comments.id(req.params.commentId)
 
-      if (!comment.user.equals(req.currentUser._id)) {
+      if (!comment.user.equals(req.currentUser._id) && (!req.currentUser.isAdmin)) {
         return res.status(401).send({ message: 'Unauthorized' })
       }
 

@@ -24,6 +24,13 @@ mongoose.connect(
             password: 'admin',
             passwordConfirmation: 'admin',
             isAdmin: true
+          },
+          {
+            username: 'test',
+            email: 'test@test.com',
+            password: 'test',
+            passwordConfirmation: 'test',
+            isAdmin: false
           }
         ])
       })
@@ -43,7 +50,8 @@ mongoose.connect(
             bottom_elevation: 1650,
             lon: 6.1218,
             lat: 45.0076,
-            image: 'www.test.url'
+            image: 'www.test.url',
+            user: users[0]
           }
 
         ])
