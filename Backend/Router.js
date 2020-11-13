@@ -20,8 +20,8 @@ router.route('/resorts')
 router.route('/joinus')
   .post(userController.createUser)
 
-// router.route('/login')
-//   .post(userController.logInUser)
+router.route('/login')
+  .post(userController.logInUser)
 
 // router.route('/resorts/:resortId/comments')
 //   .post(secureRoute, resortsController.createComment)
