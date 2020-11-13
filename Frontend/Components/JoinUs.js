@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Register = (props) => {
+const JoinUs = (props) => {
+
+
   const [formData, updateFormData] = useState({
     username: '',
     email: '',
@@ -9,9 +11,19 @@ const Register = (props) => {
     passwordConfirmation: ''
   })
 
+  const [errors, updateErrors] = useState({
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+  })
+
   function handleChange(event) {
+
     const name = event.target.name
+
     const value = event.target.value
+  
     const data = {
       ...formData,
       [name]: value
@@ -20,18 +32,25 @@ const Register = (props) => {
       ...errors,
       [name]: ''
     }
+
     updateFormData(data)
     updateErrors(newErrors)
   }
 
   function handleSubmit(event) {
+
     event.preventDefault()
 
-    axios.post('api/register', formData)
+    axios.post('/api/joinus', formData)
       .then(resp => {
         console.log(resp.data)
-        props.history.push('/register')
+        if (resp.data.errors) {
+          updateErrors(resp.data.errors)
+        } else {
+          props.history.push('/login')
+        }
       })
+ 
   }
 
   console.log(formData)
@@ -90,4 +109,4 @@ const Register = (props) => {
 
 }
 
-export default Register
+export default JoinUs

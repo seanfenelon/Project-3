@@ -16,8 +16,8 @@ const NavBar = (props) => {
             <Link to="/resorts" className="button is-dark">
               <strong>Resorts</strong>
             </Link>
-            <Link to="/register" className="button is-light">
-              Signup
+            <Link to="/joinus" className="button is-light">
+              Join Us
             </Link>
             <Link to="/login" className="button is-light">
               Login
