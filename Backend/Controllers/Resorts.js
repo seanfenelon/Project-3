@@ -18,12 +18,12 @@ function getResorts(req, res) {
 }
 
 function addResort(req, res) {
-  //Resorts
-  //  .create(req.body)
-  //  .then(resort => {
-  //    res.send(resort)
-  //  })
-  //  .catch(error => res.send(error))
+  Resorts
+    .create(req.body)
+    .then(resort => {
+      res.send(resort)
+    })
+    .catch(error => res.send(error))
 }
 
 function singleResort(req, res) {
