@@ -43,7 +43,7 @@ mongoose.connect(
             bottom_elevation: 1650,
             lon: 6.1218,
             lat: 45.0076,
-            user: users[0]
+            image: 'www.test.url'
           }
 
         ])

@@ -7,7 +7,8 @@ const resortsSchema = new mongoose.Schema({
   bottom_elevation: { type: Number, required: true },
   lon: { type: Number, required: true },
   lat: { type: Number, require: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  image: { type: Number, required: true }
 
 })
 
