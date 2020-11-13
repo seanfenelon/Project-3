@@ -7,7 +7,7 @@ const secureRoute = require('./middleware/secureRoute')
 router.route('/resorts')
   .get(resortsController.getResorts)
   .post(/*secureRoute*/resortsController.addResort)
-
+//hhh
 // ! Get clarification over the purpose of this
 // router.route('/resorts-proxy/:name')
 //   .get(resortsController.singleProxyResort)

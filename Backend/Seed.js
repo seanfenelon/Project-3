@@ -39,7 +39,7 @@ mongoose.connect(
         console.log(`${users.length} users have been created`)
         return users
       })
-
+//hmm
       .then((users) => {
         return Resorts.create([
 

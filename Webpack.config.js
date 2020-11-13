@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DotEnv = require('dotenv-webpack')
-
+//hmm
 module.exports = env => {
   return {
     entry: './frontend/index.js',
