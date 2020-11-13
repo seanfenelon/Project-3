@@ -43,14 +43,14 @@ function singleResort(req, res) {
 }
 
 function removeResort(req, res) {
-  //const name = req.params.name
-//
-  //Resorts
-  //  .findOne({ name: { regex: name, $options: 'i' } })
-  //  .then(resort => {
-  //    resort.deleteOne()
-  //    res.send(resort)
-  //  })
+  const name = req.params.name
+
+  Resorts
+    .findOne({ name: { regex: name, $options: 'i' } })
+    .then(resort => {
+      resort.deleteOne()
+      res.send(resort)
+    })
 }
 
 function editResort(req, res) {
