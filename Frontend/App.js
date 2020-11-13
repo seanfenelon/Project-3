@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react'
-import { BroweserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 
 import 'bulma' 
 import './styles/Style.scss'
 
 //compoments
-import Favourites from './Components/Favourites'
-import Home from './Components/Home'
-import Login from './Components/Login'
-import Navbar from './Components/Navbar'
-import Register from './Components/Register'
-import Resorts from './Components/Resorts'
-import SingleResort from './Components/SingleResort'
+import Favourites from './components/Favourites'
+import Home from './components/Home'
+import Login from './components/Login'
+import Navbar from './components/Navbar'
+import Register from './components/Register'
+import Resorts from './components/Resorts'
+import SingleResort from './components/SingleResort'
 
 const App = () => (
-  <BroweserRouter>
+  <BrowserRouter>
     <Navbar />
     <Switch>
       <Route exact path="/" component={Home} />
@@ -25,7 +25,7 @@ const App = () => (
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
     </Switch> 
-  </BroweserRouter>
+  </BrowserRouter>
 )
 
 export default App
