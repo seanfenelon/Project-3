@@ -24,7 +24,7 @@ router.route('/resorts')
 //   .post(userController.logInUser)
 
 router.route('/resorts/:resortId/comments')
-  .post(resortsController.createComment)
+  .post(secureRoute, resortsController.createComment)
 
 // router.route('/resorts/:resortId/comments/:commentId')
 //   .put(secureRoute, resortsController.editComment)
