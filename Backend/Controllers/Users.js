@@ -9,6 +9,7 @@ function createUser(req, res) {
     .create(body)
     .then(user => {
       console.log(user)
+      console.log('here')
       res.send(user)
     })
     .catch(error => res.send(error))
