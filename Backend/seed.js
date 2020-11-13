@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const Resorts = require('./models/resorts')
-const User = require('./models/user')
+const User = require('./models/users')
 
 const axios = require('axios')
 
