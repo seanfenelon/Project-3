@@ -133,6 +133,47 @@ mongoose.connect(
             image: 'www.test.url',
             user: users[0]
           },
+          {
+            name: 'Mammoth Mountain',
+            country: 'USA',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -119.0326,
+            lat: 37.6308,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Whistler',
+            country: 'Canada',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -122.9574,
+            lat: 50.1163,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Queenstown',
+            country: 'New Zealand',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: 168.6616,
+            lat: -45.0302,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Rusutsu',
+            country: 'Japan',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: 140.8969,
+            lat: 42.7484,
+            image: 'www.test.url',
+            user: users[0]
+          }
+
           
 
         ])
