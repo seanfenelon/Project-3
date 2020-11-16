@@ -20,6 +20,10 @@ const NavBar = (props) => {
     <div className="collapse navbar-collapse text-right" id="navbarResponsive">
       <ul className="navbar-nav ml-auto">
 
+      <li className="nav-item">
+          <Link to="/" className="nav-link">Home</Link>
+        </li>
+
         {!localStorage.getItem('token') && <li className="nav-item">
           <Link to="/Login" className="nav-link">Login</Link>
         </li>}
