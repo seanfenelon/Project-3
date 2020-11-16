@@ -17,10 +17,17 @@ const SingleAccount = (props) => {
   }, [])
 
   console.log('can you see me?')
-  console.log(formData.username)
+  console.log(formData)
 
   return <div className="container-custom">
-    <h1>hello world</h1>
+    <div className="card">
+      <img className="card-img-top" src={formData.image} alt="Card image cap"></img>
+      <div className="card-body">
+        <h5 className="card-title">Username: {formData.username}</h5>
+      </div>
+
+    </div>
+
   </div>
 
 }

@@ -41,7 +41,7 @@ const NavBar = (props) => {
         </li>}
 
         {localStorage.getItem('token') && <li className="nav-item">
-          <Link to="`/users/:username`" className="nav-link">My Account</Link>
+          <Link to={`/users/${props.match.params.username}`} className="nav-link">My Account</Link>
         </li>}
 
         {localStorage.getItem('token') && <li className="nav-item">
