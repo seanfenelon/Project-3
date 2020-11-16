@@ -23,8 +23,8 @@ const Home = () => {
     // longitude: 6.1218,
     latitude: 54.5260,
     longtiude: 105.2551,
-    transitionDuration: 5000,
-    transitionInterpolator: new FlyToInterpolator(),
+    // transitionDuration: 5000,
+    // transitionInterpolator: new FlyToInterpolator(),
     // transitionEasing: d3.easeCubic
   })
   
@@ -46,8 +46,8 @@ const Home = () => {
       zoom: 5,
       latitude: 54.5260,
       longtiude: 105.2551,
-      height: '100vh',
-      width: '100vw'
+      height: '80vh',
+      width: 'vw'
     }
     // preventDefault()
     console.log('north america')
@@ -60,15 +60,16 @@ const Home = () => {
   return <div>
     {/* <button onClick={goToNorthAmerica()}>North America
     </button> */}
+    <button>North America</button>
     <ReactMapGL
-
+      
       mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
       { ...viewPort }
       onViewPortChange={(viewPort) => setViewPort(viewPort)}
     >
       <button onClick={goToNorthAmerica}>North America
       </button>
-
+``
       {resorts.map((resort, index) => {
         return <Marker 
           key={index}

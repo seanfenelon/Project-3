@@ -11,7 +11,7 @@ const NavBar = (props) => {
 
   return <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
-    <Link to="/Home" className="navbar-brand nav-brand">Ski Resorts</Link>
+    <Link to="/" className="navbar-brand nav-brand">Ski Resorts</Link>
 
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span className="navbar-toggler-icon"></span>
