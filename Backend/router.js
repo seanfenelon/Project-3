@@ -25,7 +25,6 @@ router.route('/login')
 
 router.route('/users')
   .get(userController.getUsers)
-//  .put(/*secureRoute*/userController.modifyUsers)
 
 router.route('/users/:username')
   .get(userController.singleUser)

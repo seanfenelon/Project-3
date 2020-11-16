@@ -1,46 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { getCurrentUserId } from '../lib'
 
 const SingleAccount = (props) => {
 
-  const [formData, updateFormData] = useState({
-    username: '',
-    image: '',
-    password: ''
-  })
+  const [formData, updateFormData] = useState({})
+  const [text, updateText] = useState('')
+  const token = localStorage.getItem('token')
 
-  //  const [errors, updateErrors] = useState({
-  //    username: '',
-  //    image: '',
-  //  })
+  useEffect(() => {
+    axios.get(`/api/users/${props.match.params.username}`)
+      .then((resp) => {
+        updateFormData(resp.data)
+      })
+  }, [])
 
-  function handleUpdate(event) {
+  console.log('can you see me?')
+  console.log(formData.username)
 
-    const data = {
-      ...formData,
-      [username]: value,
-      [image]: value,
-      [password]: value
-    }
-
-    //  const newErrors = {
-    //    ...errors,
-    //    [username]: '',
-    //    [image]: ''
-    //  }
-
-    updateFormData(data)
-    //  updateErrors(newErrors)
-  }
-
-  function handleDeleteAccount(event) {
-
-    event.preventdefault()
-
-    axios.delete(`/api/users/${fornData.username}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-  }
+  return <div>
+    <h1>Hello World</h1>
+  </div>
 
 }
 

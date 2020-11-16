@@ -26,7 +26,7 @@ const App = () => (
       <Route exact path="/resorts" component={Resorts} />
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
-      <Route exact path="/myaccount" component={SingleAccount} />
+      <Route exact path="/users/:username" component={SingleAccount} />
 
     </Switch> 
   </BrowserRouter>
