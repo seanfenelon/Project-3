@@ -172,6 +172,66 @@ mongoose.connect(
             lat: 42.7484,
             image: 'www.test.url',
             user: users[0]
+          },
+          {
+            name: 'Jackson Hole',
+            country: 'USA',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -110.8279,
+            lat: 43.5875,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Aspen Snowmass',
+            country: 'USA',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -106.9491,
+            lat: 39.2084,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Vail',
+            country: 'USA',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -106.3742,
+            lat: 39.6403,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Alta',
+            country: 'USA',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -111.6386,
+            lat: 40.5884,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Revelstoke',
+            country: 'Canada',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: -118.1957,
+            lat: 50.9981,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Perisher',
+            country: 'Australia',
+            top_elevation: 2811,
+            bottom_elevation: 1304,
+            lon: 148.4094,
+            lat: 36.4055,
+            image: 'www.test.url',
+            user: users[0]
           }
 
           

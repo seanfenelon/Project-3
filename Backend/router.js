@@ -12,8 +12,8 @@ router.route('/resorts')
 // router.route('/resorts-proxy/:name')
 //   .get(resortsController.singleProxyResort)
 
-// router.route('/resorts/:name')
-//   .get(resortsController.singleResort)
+router.route('/resorts/:name')
+  .get(resortsController.singleResort)
 //   .delete(secureRoute, resortsController.removeResort)
 //   .put(secureRoute, resortsController.editResort)
 
