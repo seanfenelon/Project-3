@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 
-const myAccount = (props) => {
+const SingleAccount = (props) => {
 
   const [formData, updateFormData] = useState({
     username: '',
     image: '',
+    password: ''
   })
 
   //  const [errors, updateErrors] = useState({
@@ -13,12 +14,13 @@ const myAccount = (props) => {
   //    image: '',
   //  })
 
-  function handleChange(event) {
+  function handleUpdate(event) {
 
     const data = {
       ...formData,
       [username]: value,
-      [image]: value
+      [image]: value,
+      [password]: value
     }
 
     //  const newErrors = {
@@ -31,13 +33,15 @@ const myAccount = (props) => {
     //  updateErrors(newErrors)
   }
 
-  function handleSubmit(event) {
+  function handleDeleteAccount(event) {
 
     event.preventdefault()
 
-    axios.put('/api/')
+    axios.delete(`/api/users/${fornData.username}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
   }
 
 }
 
-export default myAccount
+export default SingleAccount

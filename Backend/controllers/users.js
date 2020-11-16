@@ -68,6 +68,8 @@ function modifyUser(req, res) {
         return res.status(401).send({ message: 'Unauthorised' })
       }
       account.set(body)
+      //account.save()
+      //res.send(account)
       return account.save()
     })
     .then(account => res.send(account))

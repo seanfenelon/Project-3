@@ -13,7 +13,7 @@ import Navbar from './components/Navbar'
 import JoinUs from './components/JoinUs'
 import Resorts from './components/Resorts'
 import SingleResort from './components/SingleResort'
-import MyAccount from './components/MyAccount'
+import SingleAccount from './components/SingleAccount'
 
 const App = () => (
   <BrowserRouter>
@@ -25,7 +25,7 @@ const App = () => (
       <Route exact path="/resorts" component={Resorts} />
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
-      <Route exact path="/myaccount" component={MyAccount} />
+      <Route exact path="/myaccount" component={SingleAccount} />
 
     </Switch> 
   </BrowserRouter>
