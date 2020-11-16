@@ -5,7 +5,7 @@ const Login = (props) => {
 
   const [formData, updateFormData] = useState({
     email: '',
-    password: '',
+    password: ''
   })
 
   function handleChange(event) {

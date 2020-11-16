@@ -10,7 +10,7 @@ import Favourites from './components/Favourites'
 import Home from './components/Home'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
-import Register from './components/Register'
+import JoinUs from './components/JoinUs'
 import Resorts from './components/Resorts'
 import SingleResort from './components/SingleResort'
 
@@ -19,7 +19,7 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/joinus" componet={Register} />
+      <Route exact path="/joinus" component={JoinUs} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/resorts" component={Resorts} />
       <Route exact path="/resorts/:name" component={SingleResort} />
