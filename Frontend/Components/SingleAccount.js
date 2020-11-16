@@ -19,8 +19,8 @@ const SingleAccount = (props) => {
   console.log('can you see me?')
   console.log(formData.username)
 
-  return <div>
-    <h1>Hello World</h1>
+  return <div className="container-custom">
+    <h1>hello world</h1>
   </div>
 
 }
