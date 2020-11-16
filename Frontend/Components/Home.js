@@ -11,29 +11,38 @@ const mapData = [
   }
 ]
 const Home = () => {
-  const [resortLocations] = useState(mapData)
+   
+  const [resorts, updateResorts] = useState([])
+  // const [resortLocations] = useState(mapData)
   const [viewPort, setViewPort] = useState({
     height: '100vh',
     width: '100vw', 
-    zoom: 5,
+    zoom: 2,
     latitude: 45.0076,
     longitude: 6.1218
   })
   
+  useEffect(() => {
+    axios.get('/api/resorts')
+      .then(resp => {
+        updateResorts(resp.data)
+      })
+  }, [])
+
   return <MapGL
 
     mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
     { ...viewPort }
     onViewPortChange={(viewPort) => setViewPort(viewPort)}
   >
-    {resortLocations.map(place => {
+    {resorts.map((resort, index) => {
       return <Marker 
-        key={place.id}
-        latitude={place.lat}
-        longitude={place.lon}
+        key={index}
+        latitude={resort.lat}
+        longitude={resort.lon}
       >
         <div>
-          <span>{place.name}</span>
+          <span>{resort.name}</span>
         </div>
       </Marker>
     })}
