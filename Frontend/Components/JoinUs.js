@@ -23,7 +23,7 @@ const JoinUs = (props) => {
     const name = event.target.name
 
     const value = event.target.value
-  
+
     const data = {
       ...formData,
       [name]: value
@@ -50,62 +50,76 @@ const JoinUs = (props) => {
           props.history.push('/login')
         }
       })
- 
+
   }
 
   console.log(formData)
 
-  return <form onSubmit={handleSubmit}>
-    <div>
-      <label>Username</label>
-      <input
-        type="text"
-        onChange={handleChange}
-        value={formData.username}
-        name="username"
-      />
-      {errors.username && <p style={{ color: 'red' }}>
-        {`There was a problem with your ${errors.username.path}`}
-      </p>}
-    </div>
-    <div>
-      <label>Email</label>
-      <input
-        type="text"
-        onChange={handleChange}
-        value={formData.email}
-        name="email"
-      />
-      {errors.email && <p style={{ color: 'red' }}>
-        {`There was a problem with your ${errors.email.path}`}
-      </p>}
-    </div>
-    <div>
-      <label>Password</label>
-      <input
-        type="password"
-        onChange={handleChange}
-        value={formData.password}
-        name="password"
-      />
-      {errors.password && <p style={{ color: 'red' }}>
-        {`There was a problem with your ${errors.password.path}`}
-      </p>}
-    </div>
-    <div>
-      <label>Confirm Password</label>
-      <input
-        type="password"
-        onChange={handleChange}
-        value={formData.passwordConfirmation}
-        name="passwordConfirmation"
-      />
-      {errors.passwordConfirmation && <p style={{ color: 'red' }}>
-        {'Does not match password'}
-      </p>}
-    </div>
-    <button>Signup</button>
-  </form>
+  return <div className="container container-custom">
+
+    <form onSubmit={handleSubmit}>
+
+      <div className="form-group">
+        <input
+          className="form-control"
+          placeholder="Username"
+          type="text"
+          onChange={handleChange}
+          value={formData.username}
+          name="username"
+        />
+        {errors.username && <p style={{ color: 'red' }}>
+          {`There was a problem with your ${errors.username.path}`}
+        </p>}
+      </div>
+
+      <div className="form-group">
+        <input
+          className="form-control"
+          placeholder="Email"
+          type="text"
+          onChange={handleChange}
+          value={formData.email}
+          name="email"
+        />
+        {errors.email && <p style={{ color: 'red' }}>
+          {`There was a problem with your ${errors.email.path}`}
+        </p>}
+      </div>
+
+      <div className="form-group">
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="Password"
+          onChange={handleChange}
+          value={formData.password}
+          name="password"
+        />
+        {errors.password && <p style={{ color: 'red' }}>
+          {`There was a problem with your ${errors.password.path}`}
+        </p>}
+      </div>
+
+      <div className="form-group">
+        <input
+          className="form-control"
+          placeholder="Confirm Password"
+          type="password"
+          onChange={handleChange}
+          value={formData.passwordConfirmation}
+          name="passwordConfirmation"
+        />
+        {errors.passwordConfirmation && <p style={{ color: 'red' }}>
+          {'Does not match password'}
+        </p>}
+      </div>
+
+      <button className="btn btn-primary">Submit</button>
+
+    </form>
+
+  </div>
 
 }
 
