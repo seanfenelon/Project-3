@@ -46,7 +46,13 @@ const Login = (props) => {
       />
     </div>
     <button>Login</button>
+
+
+    <button className="btn btn-outline-light btn-lg">hello</button>
   </form>
+
+
+
 }
 
 export default Login

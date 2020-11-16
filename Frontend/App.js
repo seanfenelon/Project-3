@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 
 import 'bulma' 
-import './styles/Style.scss'
+import './bootstrap/dist/css/bootstrap.min.css'
+import './styles/style.css'
 
 //compoments
 import Favourites from './components/Favourites'
