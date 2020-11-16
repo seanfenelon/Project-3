@@ -23,7 +23,7 @@ mongoose.connect(
             email: 'admin@admin.com',
             password: 'admin',
             passwordConfirmation: 'admin',
-            image: 'https://i.imgur.com/ioS25on.jpg',
+            image: 'https://i.imgur.com/c8iaGOf.jpg',
             isAdmin: true
           },
           {
