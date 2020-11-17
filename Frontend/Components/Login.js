@@ -8,12 +8,17 @@ const Login = (props) => {
     password: ''
   })
 
+  const [errors, updateErrors] = useState({
+    message: ''
+  })
+
   function handleChange(event) {
     const data = {
       ...formData,
       [event.target.name]: event.target.value
     }
     updateFormData(data)
+
   }
 
   function handleSubmit(event) {
@@ -21,10 +26,22 @@ const Login = (props) => {
 
     axios.post('/api/login', formData)
       .then(resp => {
-        localStorage.setItem('token', resp.data.token)
-        props.history.push('/resorts')
+
+        if (resp.data.message) {
+          updateErrors(resp.data)
+
+        } else {
+          localStorage.setItem('token', resp.data.token)
+          props.history.push('/resorts')
+        }
+
       })
   }
+
+
+
+  // console.log(formData)
+  console.log(errors)
 
   return <div className="container container-custom">
 
@@ -35,10 +52,11 @@ const Login = (props) => {
         <input
           className="form-control"
           placeholder="Email"
-          type="text"
+          type="email"
           onChange={handleChange}
           value={formData.email}
           name="email"
+          required
         />
 
       </div>
@@ -52,9 +70,14 @@ const Login = (props) => {
           onChange={handleChange}
           value={formData.password}
           name="password"
+          required
         />
 
       </div>
+
+      {errors.message && <p id="error" style={{ color: 'red' }}>
+        {errors.message}
+      </p>}
 
       <button className="btn btn-primary">Login</button>
 

@@ -51,7 +51,6 @@ const NavBar = (props) => {
         </li>}
 
         
-
       </ul>
     </div>
 
