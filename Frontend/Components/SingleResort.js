@@ -62,7 +62,7 @@ const SingleResort = (props) => {
           <p className="card-text card-text-single">{singleResort.description}</p>
           <h6>Current temperature: {(weather.current.temp - 273) | 0}°C {weather.current.weather[0].description}</h6>
           <div className="container">
-            <div className="row">
+            <div className="row weather-days">
               {weather.daily.map(day => {
                 return <div className="col" key={day.dt}><p>{(day.temp.max - 273) | 0}°C</p> <p>{(day.temp.min - 273) | 0}°C</p> <p>{day.weather[0].main}</p></div>
               })}
