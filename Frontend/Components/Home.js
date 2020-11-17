@@ -93,7 +93,7 @@ const Home = () => {
 
   return <div>
 
-    <ReactMapGL
+    <MapGL
       
       mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
       { ...viewPort }
@@ -123,26 +123,9 @@ const Home = () => {
           </Marker>
         </Link>
       })}
-    </ReactMapGL>
+    </MapGL>
   </div >
 
-  // return <h1>Hello World</h1>
-
-  mapboxApiAccessToken={ 'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg' }
-
-{...viewPort }
-
-onViewportChange = {(viewPort) => setViewPort(viewPort)}
-  >
-{/* <button onClick={goToNorthAmerica}>North America
-      </button> */}
-
-  // return <div>
-
-  //   <h1>Hello World</h1>
-
-
-  // </div>
 }
 
 export default Home
