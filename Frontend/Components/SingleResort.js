@@ -49,9 +49,9 @@ const SingleResort = (props) => {
 
     <div className="card card-single">
       <div className="text-center">
-        <img className="card-img-top-single" src="https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i4328ae53a316c822/version/1510667937/luxurious-ski-resorts-courchevel-copyright-nikolpetr-european-best-destinations.jpg" alt="Card image cap"></img>
-        <p>Top Elevation: {singleResort.top_elevation}</p>
-        <p>Bottom Elevation: {singleResort.bottom_elevation}</p>
+        <img className="card-img-top-single" src={`${singleResort.image}`}  alt="Card image cap"></img>
+        <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
+        <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
 
       </div>
 
@@ -59,10 +59,10 @@ const SingleResort = (props) => {
         <div className="resort-info-upper">
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
-          <p className="card-text card-text-single">Some example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+          <p className="card-text card-text-single">{singleResort.description}</p>
           <h6>Current temperature: {(weather.current.temp - 273) | 0}°C {weather.current.weather[0].description}</h6>
           <div className="container">
-            <div className="row">
+            <div className="row weather-days">
               {weather.daily.map(day => {
                 return <div className="col" key={day.dt}><p>{(day.temp.max - 273) | 0}°C</p> <p>{(day.temp.min - 273) | 0}°C</p> <p>{day.weather[0].main}</p></div>
               })}
