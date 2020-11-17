@@ -59,8 +59,8 @@ const SingleResort = (props) => {
         <div className="resort-info-upper">
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
-          <p className="card-text">Some example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-          <h6>current temperature: {(weather.current.temp - 273) | 0}°C {weather.current.weather[0].description}</h6>
+          <p className="card-text card-text-single">Some example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+          <h6>Current temperature: {(weather.current.temp - 273) | 0}°C {weather.current.weather[0].description}</h6>
           <div className="container">
             <div className="row">
               {weather.daily.map(day => {
@@ -75,6 +75,7 @@ const SingleResort = (props) => {
           <h5>Comments</h5>
 
           <div className="comments">
+            
             {singleResort.comments && singleResort.comments.map(comment => {
 
               return <div key={comment._id} className="row comments-spaced text-center">

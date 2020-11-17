@@ -116,7 +116,7 @@ form input {
   width: 70%;
   position: relative;
   top: 7rem;
-  height: 38rem;
+  height: 40rem;
 }
 
 .card-img-top-single {
@@ -133,7 +133,9 @@ form input {
   margin-left: 1rem;
 }
 
-
+.card-text-single {
+  height: 5rem;
+}
 
 /* COMMENTS */
 
@@ -157,6 +159,7 @@ form input {
   word-wrap: break-word;
   width: 15rem;
   font-size: .7rem;
+  
 }
 
 .comments {
