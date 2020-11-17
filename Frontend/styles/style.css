@@ -85,3 +85,8 @@ font-size: .8rem!important;
   overflow: scroll;
   height: 3rem;
 }
+.map-menu {
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
