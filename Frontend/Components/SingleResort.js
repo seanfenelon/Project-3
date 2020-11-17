@@ -49,7 +49,7 @@ const SingleResort = (props) => {
       <div className="card-body">
         <h1 className="card-title">{singleResort.name}</h1>
         <h5>{singleResort.country}</h5>
-        <p className="card-text-single">Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+<p className="card-text-single">{singleResort.description}</p>
 
 
         <div className="comments-box">
