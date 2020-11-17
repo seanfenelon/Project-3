@@ -19,7 +19,7 @@ mongoose.connect(
       .then(() => {
         return User.create([
           {
-            username: 'admin',
+            username: 'Admin',
             email: 'admin@admin.com',
             password: 'admin',
             passwordConfirmation: 'admin',
@@ -27,7 +27,7 @@ mongoose.connect(
             isAdmin: true
           },
           {
-            username: 'test',
+            username: 'Test',
             email: 'test@test.com',
             password: 'test',
             passwordConfirmation: 'test',

@@ -15,6 +15,7 @@ import JoinUs from './components/JoinUs'
 import Resorts from './components/Resorts'
 import SingleResort from './components/SingleResort'
 import SingleAccount from './components/SingleAccount'
+import UpdateAccount from './components/UpdateAccount'
 
 const App = () => (
   <BrowserRouter>
@@ -27,6 +28,7 @@ const App = () => (
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
       <Route exact path="/users/:username" component={SingleAccount} />
+      <Route exact path="/users/edit/:username" component={UpdateAccount} />
 
     </Switch> 
   </BrowserRouter>
