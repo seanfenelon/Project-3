@@ -45,7 +45,7 @@ const NavBar = (props) => {
         </li>}
 
         {localStorage.getItem('token') && <li className="nav-item">
-          <Link to="/home" className="nav-link nav-contact"
+          <Link to="/" className="nav-link nav-contact"
             onClick={handleLogout}
           >Logout</Link>
         </li>}
