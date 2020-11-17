@@ -51,7 +51,6 @@ const UpdateAccount = (props) => {
   return <div className="container container-custom">
 
     <form onSubmit={handleSubmit}>
-
       <div className="form-group">
         <input
           className="form-control"
