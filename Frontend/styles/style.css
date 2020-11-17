@@ -135,7 +135,6 @@ font-size: .8rem!important;
 .card-img-top-single {
   /* width: 100%; */
   height: 10rem;
-<<<<<<< HEAD
   margin: 20px;
 }
 
@@ -185,9 +184,6 @@ font-size: .8rem!important;
   margin: 0!important;
   padding: 0!important;
 }
-<<<<<<< HEAD
->>>>>>> 132ba1d2824a3af9af44ebdc938b4e9fb7336b75
-=======
 
 .comment-user {
   color: red;
@@ -227,8 +223,3 @@ textarea:focus,
 .btn-submit-comments {
   font-size: .8rem!important;
 }
->>>>>>> 039fb87a5c943c0233c88f258a5b965b395e0929
-=======
-  margin: 20px; 
-}
->>>>>>> daniel

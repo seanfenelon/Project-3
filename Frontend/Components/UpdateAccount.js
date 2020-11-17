@@ -3,8 +3,6 @@ import axios from 'axios'
 
 const UpdateAccount = (props) => {
 
-  const [image, updateImage] = useState('')
-
   const [formData, updateFormData] = useState({
     username: '',
     email: '',
@@ -17,40 +15,48 @@ const UpdateAccount = (props) => {
     username: '',
     email: '',
     password: '',
-    passwordConfirmation: ''
+    passwordConfirmation: '',
+    image: ''
   })
 
-  //const inputFields = ['username', 'email', 'password', 'passwordConfirmation', 'image']
-
-  useEffect(() => {
-    axios.get(`/api/users/${props.match.params.username}`)
-      .then(resp => {
-        updateFormData(resp.data)
-      })
-  }, [])
-
   function handleChange(event) {
+
+    const name = event.target.name
+
+    const value = event.target.value
+
     const data = {
       ...formData,
-      [event.target.name]: event.target.value
+      [name]: value
     }
+    const newErrors = {
+      ...errors,
+      [name]: ''
+    }
+
     updateFormData(data)
+    updateErrors(newErrors)
+
   }
 
-  function handleSubmit(event) {
+  function handleUpdate(event) {
+
     event.preventDefault()
+
     const token = localStorage.getItem('token')
     axios.put(`/api/users/${props.match.params.username}`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
-        props.history.push(`/api/users/${props.match.params.username}`)
+        console.log(res.data)
+        props.history.push(`/user/${props.match.params.username}`)
       })
+
   }
 
-  function handleUpload(event) {
-
+  function handleImageUpload(event) {
     event.preventDefault()
+
     const token = localStorage.getItem('token')
 
     window.cloudinary.createUploadWidget(
@@ -66,7 +72,7 @@ const UpdateAccount = (props) => {
         axios.put(`/api/users/${props.match.params.username}`, { url: result.info.secure_url }, {
           headers: { Authorization: `Bearer ${token}` }
         })
-          .then((res) => updateImage(res.data))
+          .then((res) => updateFormData(res.data))
       }
     ).open()
   }
@@ -75,26 +81,18 @@ const UpdateAccount = (props) => {
 
   return <div className="container container-custom">
 
-    <img src={image.url} />
-    <button
-      onClick={handleUpload}
-    >Upload
-      </button>
+    <form onSubmit={handleUpdate}>
 
-    <form onSubmit={handleSubmit}>
-      {/*<div className="form-group">
-        <input
-          className="form-control"
-          placeholder="Upload Image"
+      <div className="form-group">
+        <img src={formData.image} />
+        <button
           type="text"
-          onChange={handleChange}
           value={formData.image}
+          onClick={handleImageUpload}
           name="image"
-        />
-        {errors.username && <p style={{ color: 'red' }}>
-          {`There was a problem with your ${errors.username.path}`}
-        </p>}
-      </div>*/}
+        >Upload
+        </button>
+      </div>
 
       <div className="form-group">
         <input
@@ -105,7 +103,7 @@ const UpdateAccount = (props) => {
           value={formData.username}
           name="username"
         />
-        {errors.username && <p style={{ color: 'red' }}>
+        {errors.username && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.username.path}`}
         </p>}
       </div>
@@ -119,7 +117,7 @@ const UpdateAccount = (props) => {
           value={formData.email}
           name="email"
         />
-        {errors.email && <p style={{ color: 'red' }}>
+        {errors.email && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.email.path}`}
         </p>}
       </div>
@@ -128,12 +126,12 @@ const UpdateAccount = (props) => {
         <input
           className="form-control"
           placeholder="Password"
-          type="password"
+          type="Password"
           onChange={handleChange}
           value={formData.password}
           name="password"
         />
-        {errors.password && <p style={{ color: 'red' }}>
+        {errors.password && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.password.path}`}
         </p>}
       </div>
@@ -147,33 +145,16 @@ const UpdateAccount = (props) => {
           value={formData.passwordConfirmation}
           name="passwordConfirmation"
         />
-        {errors.passwordConfirmation && <p style={{ color: 'red' }}>
+        {errors.passwordConfirmation && <p id="error" style={{ color: 'red' }}>
           {'Does not match password'}
         </p>}
       </div>
 
-      <button className="btn btn-secondary">Update</button>
+      <button className="btn btn-primary">Submit</button>
 
     </form>
 
   </div>
-
-  //  <div className="container container-custom">
-  //    <form onSubmit={handleSubmit}>
-  //      <div className="form-group">
-  //        {inputFields.map((field, index) => {
-  //          return <input
-  //            key={index}
-  //            type="text"
-  //            className="form-control"
-  //            onChange={handleChange}
-  //            value={formData[field]}
-  //            name={field}
-  //          />
-  //        })}
-  //      </div>
-  //    </form>
-  //  </div>
 
 }
 
