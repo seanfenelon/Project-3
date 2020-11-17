@@ -23,10 +23,10 @@ router.route('/joinus')
 router.route('/login')
   .post(userController.logInUser)
 
-router.route('/resorts/:resortId/comments')
+router.route('/resorts/:name/comments')
   .post(secureRoute, resortsController.createComment)
 
-router.route('/resorts/:resortId/comments/:commentId')
+router.route('/resorts/:name/comments/:commentId')
   .put(secureRoute, resortsController.editComment)
   .delete(secureRoute, resortsController.deleteComment)
 
