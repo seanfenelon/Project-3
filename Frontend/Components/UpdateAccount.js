@@ -3,6 +3,8 @@ import axios from 'axios'
 
 const UpdateAccount = (props) => {
 
+  const [image, updateImage] = useState('')
+
   const [formData, updateFormData] = useState({
     username: '',
     email: '',
@@ -18,7 +20,7 @@ const UpdateAccount = (props) => {
     passwordConfirmation: ''
   })
 
-  const inputFields = ['username', 'email', 'password', 'passwordConfirmation', 'image']
+  //const inputFields = ['username', 'email', 'password', 'passwordConfirmation', 'image']
 
   useEffect(() => {
     axios.get(`/api/users/${props.match.params.username}`)
@@ -37,21 +39,50 @@ const UpdateAccount = (props) => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    const token = localStorage.getIten('token')
-    axios.put(`/api/users/${props.match.params.username}`, {
+    const token = localStorage.getItem('token')
+    axios.put(`/api/users/${props.match.params.username}`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     })
-      .then(resp => {
-        props.history.push(`/users/${props.mathc.params.username}`)
+      .then(res => {
+        props.history.push(`/api/users/${props.match.params.username}`)
       })
+  }
+
+  function handleUpload(event) {
+
+    event.preventDefault()
+    const token = localStorage.getItem('token')
+
+    window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dzt94',
+        uploadPreset: 'skiresortapp',
+        cropping: true
+      },
+      (err, result) => {
+        if (result.event !== 'success') {
+          return
+        }
+        axios.put(`/api/users/${props.match.params.username}`, { url: result.info.secure_url }, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then((res) => updateImage(res.data))
+      }
+    ).open()
   }
 
   console.log(formData)
 
   return <div className="container container-custom">
 
+    <img src={image.url} />
+    <button
+      onClick={handleUpload}
+    >Upload
+      </button>
+
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
+      {/*<div className="form-group">
         <input
           className="form-control"
           placeholder="Upload Image"
@@ -63,8 +94,8 @@ const UpdateAccount = (props) => {
         {errors.username && <p style={{ color: 'red' }}>
           {`There was a problem with your ${errors.username.path}`}
         </p>}
-      </div>
-      
+      </div>*/}
+
       <div className="form-group">
         <input
           className="form-control"
@@ -97,7 +128,7 @@ const UpdateAccount = (props) => {
         <input
           className="form-control"
           placeholder="Password"
-          type="Password"
+          type="password"
           onChange={handleChange}
           value={formData.password}
           name="password"

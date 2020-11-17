@@ -16,6 +16,7 @@ import Resorts from './components/Resorts'
 import SingleResort from './components/SingleResort'
 import SingleAccount from './components/SingleAccount'
 import UpdateAccount from './components/UpdateAccount'
+import ImageUpload from './components/ImageUpload'
 
 const App = () => (
   <BrowserRouter>
@@ -29,6 +30,7 @@ const App = () => (
       <Route exact path="/favourites" component={Favourites} />
       <Route exact path="/users/:username" component={SingleAccount} />
       <Route exact path="/users/edit/:username" component={UpdateAccount} />
+      <Route exact path="/users/:username/image" component={ImageUpload} />
 
     </Switch> 
   </BrowserRouter>
