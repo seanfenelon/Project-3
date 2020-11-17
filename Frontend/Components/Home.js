@@ -4,6 +4,14 @@ import MapGL, { Marker, LinearInterpolator, FlyToInterpolator } from 'react-map-
 import d3 from 'd3-ease'
 import { Link } from 'react-router-dom'
 
+// const mapData = [
+//   {
+//     id: '1',
+//     name: 'Val Thorens',
+//     lat: 45.0076,
+//     lon: 6.1218
+//   }
+// ]
 const Home = () => {
 
   const [resorts, updateResorts] = useState([])

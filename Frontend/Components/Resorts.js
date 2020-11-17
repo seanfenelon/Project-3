@@ -30,7 +30,7 @@ const Resorts = () => {
           <h5 className="card-title">{resort.name}</h5>
           <h6>{resort.country}</h6>
           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-          <Link to="/resorts/:name" className="btn btn-primary btn-resort">View Resort</Link>
+          <Link to={`/resorts/${resort.name}`} className="btn btn-primary btn-resort">View Resort</Link>
         </div>
       </div>
 
