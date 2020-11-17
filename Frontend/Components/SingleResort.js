@@ -49,7 +49,7 @@ const SingleResort = (props) => {
 
     <div className="card card-single">
       <div className="text-center">
-        <img className="card-img-top-single" src="https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i4328ae53a316c822/version/1510667937/luxurious-ski-resorts-courchevel-copyright-nikolpetr-european-best-destinations.jpg" alt="Card image cap"></img>
+        <img className="card-img-top-single" src={`${singleResort.image}`}  alt="Card image cap"></img>
         <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
         <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
 
