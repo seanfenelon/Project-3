@@ -23,6 +23,10 @@
   padding-right: 5px!important;
 }
 
+#error {
+font-size: 10px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -30,11 +34,10 @@
   font-weight: 700;
   font-size: .9rem;
   letter-spacing: .1rem;
-  background: rgb(18, 85, 172, 1)!important;
 }
 .fixed-top {
   backface-visibility: hidden;
-  z-index: 999;
+  z-index: 999!important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -45,7 +48,7 @@
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover {
   cursor: pointer;
-  color: #1255ac;
+  /* color: #1255ac; */
 }
 
 
@@ -85,8 +88,13 @@ font-size: .8rem!important;
   overflow: scroll;
   height: 3rem;
 }
+<<<<<<< HEAD
+
+
+=======
 .map-menu {
   position: relative;
   top: 100px;
   left: 100px;
 }
+>>>>>>> development

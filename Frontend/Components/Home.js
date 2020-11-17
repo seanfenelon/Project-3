@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import ReactMapGL, { Marker, LinearInterpolator, FlyToInterpolator } from 'react-map-gl'
+import MapGL, { Marker, LinearInterpolator, FlyToInterpolator } from 'react-map-gl'
 import d3 from 'd3-ease'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-   
+
   const [resorts, updateResorts] = useState([])
   // const [resortLocations] = useState(mapData)
   const [viewPort, setViewPort] = useState({
@@ -124,16 +124,23 @@ const Home = () => {
         </Link>
       })}
     </ReactMapGL>
-  </div>
-  
+  </div >
+
   // return <h1>Hello World</h1>
 
+  mapboxApiAccessToken={ 'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg' }
 
+{...viewPort }
+
+onViewportChange = {(viewPort) => setViewPort(viewPort)}
+  >
+{/* <button onClick={goToNorthAmerica}>North America
+      </button> */}
 
   // return <div>
 
   //   <h1>Hello World</h1>
-    
+
 
   // </div>
 }
