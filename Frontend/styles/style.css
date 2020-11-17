@@ -117,7 +117,7 @@ form input {
   width: 70%;
   position: relative;
   top: 7rem;
-  height: 40rem;
+  height: 34rem;
 }
 
 .card-img-top-single {
@@ -136,6 +136,16 @@ form input {
 
 .card-text-single {
   height: 5rem;
+}
+
+.weather-days {
+  font-size: .5rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* COMMENTS */
