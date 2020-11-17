@@ -12,6 +12,14 @@
   flex-direction: column;
 }
 
+.container-single{
+  /* height: 100vh; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .container-resorts {
   height: 100vh;
@@ -107,7 +115,9 @@ form input {
   display: flex;
   flex-direction: row !important;
   width: 70%;
-  height: 27rem;
+  position: relative;
+  top: 7rem;
+  height: 40rem;
 }
 
 .card-img-top-single {
@@ -116,14 +126,17 @@ form input {
   margin: 20px;
 }
 
-.card-text-single {
+.resort-info-upper {
   font-size: .7rem;
   overflow: scroll;
-  height: 5rem;
+
   width: 30rem;
+  margin-left: 1rem;
 }
 
-
+.card-text-single {
+  height: 5rem;
+}
 
 /* COMMENTS */
 
@@ -135,6 +148,8 @@ form input {
   align-items: center;
   width: 100%;
   height: 12rem;
+  position: relative;
+  bottom: 0;
   /* overflow: scroll;
   overflow-x: hidden */
 }
@@ -145,6 +160,7 @@ form input {
   word-wrap: break-word;
   width: 15rem;
   font-size: .7rem;
+  
 }
 
 .comments {
