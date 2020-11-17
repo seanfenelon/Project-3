@@ -37,23 +37,17 @@ const Home = () => {
       })
   }, [])
 
-  // onViewPortChange={(viewport) => setViewPort(viewPort)}
   function goToNorthAmerica() {
     const NorthAmericaViewport = {
-      // height, 
-      // width,
-      // transitionDuration,
-      // transitionInterpolator,
-      latitude: 45.5260,
-      longtiude: 105.2551,// transitionEasing,
-      zoom: 2,
-      // latitude: 54.5260,
-      // longtiude: -105.2551,
+
+      latitude: 37,
+      longitude: -102,
+      zoom: 3,
+
       height: '100vh',
       width: '100vw'
     }
-    // preventDefault()
-    console.log('north america')
+    console.log(NorthAmericaViewport.longitude)
     setViewPort(NorthAmericaViewport)
   }
   function goToWorld() {
