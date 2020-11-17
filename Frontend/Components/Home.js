@@ -39,20 +39,12 @@ const Home = () => {
 
   // onViewPortChange={(viewport) => setViewPort(viewPort)}
   function goToNorthAmerica() {
-<<<<<<< HEAD
-    const NorthAmericaViewPort = {
-=======
     const NorthAmericaViewport = {
->>>>>>> development
       // height, 
       // width,
       // transitionDuration,
       // transitionInterpolator,
-<<<<<<< HEAD
-      latitude: 5.5260,
-=======
       latitude: 45.5260,
->>>>>>> development
       longtiude: 105.2551,// transitionEasing,
       zoom: 2,
       // latitude: 54.5260,
@@ -62,9 +54,6 @@ const Home = () => {
     }
     // preventDefault()
     console.log('north america')
-<<<<<<< HEAD
-    setViewPort(NorthAmericaViewPort)
-=======
     setViewPort(NorthAmericaViewport)
   }
   function goToWorld() {
@@ -86,7 +75,6 @@ const Home = () => {
       width: '100vw'
     }
     setViewPort(WorldViewport)
->>>>>>> development
   }
   function goToAusNZ() {
     const AusNZViewport = {
@@ -113,38 +101,6 @@ const Home = () => {
 
   return <div>
 
-<<<<<<< HEAD
-  {/* <button onClick={goToNorthAmerica()}>North America
-    </button> */}
-
-  return <MapGL
-
-    mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
-    
-    {...viewPort}
-
-    onViewportChange={(viewPort) => setViewPort(viewPort)}
-  >
-    {/* <button onClick={goToNorthAmerica}>North America
-      </button> */}
-
-    {resorts.map((resort, index) => {
-      return <Marker
-        key={index}
-        latitude={resort.lat}
-        longitude={resort.lon}
-        offsetLeft={-30} offsetTop={-50}
-      >
-        {/* <div>
-            <span>{resort.name}</span>
-          </div> */}
-        <img src="https://img.icons8.com/color/48/000000/marker.png" />
-      </Marker>
-    })}
-  </MapGL>
-
-
-=======
     <MapGL
       
       mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
@@ -178,7 +134,6 @@ const Home = () => {
     </MapGL>
   </div >
 
->>>>>>> development
 }
 
 export default Home
