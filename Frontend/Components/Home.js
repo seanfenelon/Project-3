@@ -31,12 +31,12 @@ const Home = () => {
 
   // onViewPortChange={(viewport) => setViewPort(viewPort)}
   function goToNorthAmerica() {
-    const NorthAmericaViewPort = {
+    const NorthAmericaViewport = {
       // height, 
       // width,
       // transitionDuration,
       // transitionInterpolator,
-      latitude: 5.5260,
+      latitude: 45.5260,
       longtiude: 105.2551,// transitionEasing,
       zoom: 2,
       // latitude: 54.5260,
@@ -46,24 +46,68 @@ const Home = () => {
     }
     // preventDefault()
     console.log('north america')
-    setViewPort(NorthAmericaViewPort)
+    setViewPort(NorthAmericaViewport)
   }
-  
+  function goToWorld() {
+    const WorldViewport = {
+      latitude: 54.5260,
+      longitude: 15.2551,
+      zoom: 1.5,
+      height: '100vh',
+      width: '100vw'
+    }
+    setViewPort(WorldViewport)
+  }
+  function goToEurope() {
+    const WorldViewport = {
+      latitude: 46.2276,
+      longitude: 2.2137,
+      zoom: 3,
+      height: '100vh',
+      width: '100vw'
+    }
+    setViewPort(WorldViewport)
+  }
+  function goToAusNZ() {
+    const AusNZViewport = {
+      latitude: -31.850223,
+      longitude: 159.0134,
+      zoom: 3,
+      height: '100vh',
+      width: '100vw'
+    }
+    setViewPort(AusNZViewport)
+  }
+  function goToJapan() {
+    const JapanViewport = {
+      latitude: 36.332465,
+      longitude: 139.748212,
+      zoom: 3,
+      height: '100vh',
+      width: '100vw'
+    }
+    setViewPort(JapanViewport)
+  }
 
   
 
   return <div>
-    {/* <button onClick={goToNorthAmerica()}>North America
-    </button> */}
-    <button>North America</button>
+
     <ReactMapGL
       
       mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
       { ...viewPort }
       onViewportChange={(viewPort) => setViewPort(viewPort)}
     >
-      <button className="map-menu" onClick={goToNorthAmerica}>North America
-      </button>
+      <div className="map-menu">
+        <button onClick={goToWorld}>WORLD</button>
+        <button onClick={goToNorthAmerica}>North America</button>
+        <button onClick={goToEurope}>Europe</button>
+        <button onClick={goToAusNZ}>AUS/NZ</button>
+        <button onClick={goToJapan}>Japan</button>
+        
+      </div>
+      
 
       {resorts.map((resort, index) => {
         return <Link to={`/resorts/${resort.name}`} key={index}>

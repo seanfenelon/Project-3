@@ -146,18 +146,18 @@ mongoose.connect(
           {
             name: 'Whistler',
             country: 'Canada',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 2284,
+            bottom_elevation: 675,
             lon: -122.9574,
             lat: 50.1163,
             image: 'www.test.url',
             user: users[0]
           },
           {
-            name: 'Queenstown',
+            name: 'The Remarkables',
             country: 'New Zealand',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 1943,
+            bottom_elevation: 1586,
             lon: 168.6616,
             lat: -45.0302,
             image: 'www.test.url',
@@ -176,8 +176,8 @@ mongoose.connect(
           {
             name: 'Jackson Hole',
             country: 'USA',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 3185,
+            bottom_elevation: 1924,
             lon: -110.8279,
             lat: 43.5875,
             image: 'www.test.url',
@@ -186,8 +186,8 @@ mongoose.connect(
           {
             name: 'Aspen Snowmass',
             country: 'USA',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 3813,
+            bottom_elevation: 2470,
             lon: -106.9491,
             lat: 39.2084,
             image: 'www.test.url',
@@ -196,8 +196,8 @@ mongoose.connect(
           {
             name: 'Vail',
             country: 'USA',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 3527,
+            bottom_elevation: 2475,
             lon: -106.3742,
             lat: 39.6403,
             image: 'www.test.url',
@@ -206,8 +206,8 @@ mongoose.connect(
           {
             name: 'Alta',
             country: 'USA',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 3374,
+            bottom_elevation: 2600,
             lon: -111.6386,
             lat: 40.5884,
             image: 'www.test.url',
@@ -216,8 +216,8 @@ mongoose.connect(
           {
             name: 'Revelstoke',
             country: 'Canada',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 2225,
+            bottom_elevation: 512,
             lon: -118.1957,
             lat: 50.9981,
             image: 'www.test.url',
@@ -226,16 +226,23 @@ mongoose.connect(
           {
             name: 'Perisher',
             country: 'Australia',
-            top_elevation: 2811,
-            bottom_elevation: 1304,
+            top_elevation: 2054,
+            bottom_elevation: 1720,
             lon: 148.4094,
-            lat: 36.4055,
+            lat: -36.4055,
+            image: 'www.test.url',
+            user: users[0]
+          },
+          {
+            name: 'Bear Mountain',
+            country: 'USA',
+            top_elevation: 2684,
+            bottom_elevation: 2176,
+            lon: -116.8609,
+            lat: 34.2277,
             image: 'www.test.url',
             user: users[0]
           }
-
-          
-
         ])
       })
 
