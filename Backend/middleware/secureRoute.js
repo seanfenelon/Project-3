@@ -9,7 +9,7 @@ function secureRoute(req, res, next) {
 
   if (!authToken || !authToken.startsWith('Bearer')) {
     console.log('first check')
-    return res.status(401).send({ message: 'Unauthorised 1' })
+    return res.status(401).send({ message: 'Unauthorised 1 - update and imageupload' })
   }
   const token = authToken.replace('Bearer ', '')
 
