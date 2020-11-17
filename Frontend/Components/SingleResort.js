@@ -10,13 +10,16 @@ const SingleResort = (props) => {
 
   const token = localStorage.getItem('token')
   const [singleResort, updateSingleResort] = useState({})
+  const [weather, updateWeather] = useState({current:{weather:[{}]}, daily:[]})
   const [text, setText] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
 
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
       .then((axiosResponse) => {
-        updateSingleResort(axiosResponse.data)
+        updateSingleResort(axiosResponse.data.resort)
+        updateWeather(axiosResponse.data.weather)
+        
       })
   }, [])
 
@@ -49,8 +52,15 @@ const SingleResort = (props) => {
       <div className="card-body">
         <h1 className="card-title">{singleResort.name}</h1>
         <h5>{singleResort.country}</h5>
-        <p className="card-text-single">Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-
+        <p className="card-text-single">Some example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+        <h3>current temperature: {(weather.current.temp - 273)|0}°C {weather.current.weather[0].description}</h3>
+        <div className="container">
+          <div className="row">
+        {weather.daily.map(day =>{
+          return <div className="col" key={day.dt}><p>{(day.temp.max - 273)|0}°C</p> <p>{(day.temp.min - 273)|0}°C</p> <p>{day.weather[0].main}</p></div>
+        })}
+        </div>
+        </div>
 
         <div className="comments-box">
 
