@@ -9,6 +9,7 @@ function getResorts(req, res) {
   Resorts
     .find()
     .populate('user')
+    .populate('comments.user')
     .then(resorts => {
       console.log('here')
       console.log(resorts)
@@ -32,7 +33,7 @@ function singleResort(req, res) {
 
   Resorts.
     findOne({ name: name })
-    // .populate('comments.user')
+    .populate('comments.user')
     .then(resort => {
 
       res.send(resort)
@@ -73,12 +74,12 @@ function createComment(req, res) {
 
   comment.user = req.currentUser
 
-  const id = req.params.resortId
-  console.log(req.params.resortId)
+  const name = req.params.name
+  console.log(req.params.name)
 
 
   Resorts
-    .findOne({ _id: id })
+    .findOne({ name: name })
     .populate('comments.user')
     .then(resort => {
       console.log('hello')
@@ -126,12 +127,12 @@ function editComment(req, res) {
 function deleteComment(req, res) {
 
 
-  const id = req.params.resortId
+  const name = req.params.name
 
   req.body.user = req.currentUser
 
   Resorts
-    .findOne({ _id: id })
+    .findOne({ name: name })
     .populate('comments.user')
     .then(resort => {
 
