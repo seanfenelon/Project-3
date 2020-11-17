@@ -24,7 +24,7 @@ const Resorts = () => {
 
     {resorts.map((resort, index) => {
 
-      return <div className="card" key="index">
+      return <div key={index} className="card">
         <img className="card-img-top" src="https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i4328ae53a316c822/version/1510667937/luxurious-ski-resorts-courchevel-copyright-nikolpetr-european-best-destinations.jpg" alt="Card image cap"></img>
         <div className="card-body">
           <h5 className="card-title">{resort.name}</h5>

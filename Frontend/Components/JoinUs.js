@@ -35,6 +35,7 @@ const JoinUs = (props) => {
 
     updateFormData(data)
     updateErrors(newErrors)
+    
   }
 
   function handleSubmit(event) {
@@ -68,7 +69,7 @@ const JoinUs = (props) => {
           value={formData.username}
           name="username"
         />
-        {errors.username && <p style={{ color: 'red' }}>
+        {errors.username && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.username.path}`}
         </p>}
       </div>
@@ -82,7 +83,7 @@ const JoinUs = (props) => {
           value={formData.email}
           name="email"
         />
-        {errors.email && <p style={{ color: 'red' }}>
+        {errors.email && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.email.path}`}
         </p>}
       </div>
@@ -96,7 +97,7 @@ const JoinUs = (props) => {
           value={formData.password}
           name="password"
         />
-        {errors.password && <p style={{ color: 'red' }}>
+        {errors.password && <p id="error" style={{ color: 'red' }}>
           {`There was a problem with your ${errors.password.path}`}
         </p>}
       </div>
@@ -110,7 +111,7 @@ const JoinUs = (props) => {
           value={formData.passwordConfirmation}
           name="passwordConfirmation"
         />
-        {errors.passwordConfirmation && <p style={{ color: 'red' }}>
+        {errors.passwordConfirmation && <p id="error" style={{ color: 'red' }}>
           {'Does not match password'}
         </p>}
       </div>
