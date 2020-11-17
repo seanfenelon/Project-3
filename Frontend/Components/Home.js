@@ -18,19 +18,6 @@ const Home = () => {
   // const [resortLocations] = useState(mapData)
   const [viewPort, setViewPort] = useState({
     height: '100vh',
-<<<<<<< HEAD
-    width: '100vw',
-    zoom: 4,
-    // latitude: 45.0076,
-    // longitude: 6.1218,
-    latitude: 54.5260,
-    longtiude: 105.2551
-    // transitionDuration: 5000,
-    // transitionInterpolator: new FlyToInterpolator()
-    // // transitionEasing: d3.easeCubic
-  })
-
-=======
     width: '100vw', 
     zoom: 1.5,
     //europe coordinates
@@ -43,7 +30,6 @@ const Home = () => {
     // transitionEasing: d3.easeCubic
   })
   
->>>>>>> development
   useEffect(() => {
     axios.get('/api/resorts')
       .then(resp => {
