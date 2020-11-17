@@ -2,15 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ReactMapGL, { Marker, LinearInterpolator, FlyToInterpolator } from 'react-map-gl'
 import d3 from 'd3-ease'
+import { Link } from 'react-router-dom'
 
-const mapData = [
-  {
-    id: '1',
-    name: 'Val Thorens',
-    lat: 45.0076,
-    lon: 6.1218
-  }
-]
 const Home = () => {
    
   const [resorts, updateResorts] = useState([])
@@ -18,11 +11,12 @@ const Home = () => {
   const [viewPort, setViewPort] = useState({
     height: '100vh',
     width: '100vw', 
-    zoom: 1,
-    // latitude: 45.0076,
-    // longitude: 6.1218,
+    zoom: 1.5,
+    //europe coordinates
     latitude: 54.5260,
-    longtiude: 105.2551,
+    longitude: 15.2551
+    // latitude: 54.5260,
+    // longtiude: 105.2551
     // transitionDuration: 5000,
     // transitionInterpolator: new FlyToInterpolator(),
     // transitionEasing: d3.easeCubic
@@ -42,12 +36,13 @@ const Home = () => {
       // width,
       // transitionDuration,
       // transitionInterpolator,
-      // transitionEasing,
-      zoom: 5,
-      latitude: 54.5260,
-      longtiude: 105.2551,
-      height: '80vh',
-      width: 'vw'
+      latitude: 5.5260,
+      longtiude: 105.2551,// transitionEasing,
+      zoom: 2,
+      // latitude: 54.5260,
+      // longtiude: -105.2551,
+      height: '100vh',
+      width: '100vw'
     }
     // preventDefault()
     console.log('north america')
@@ -65,22 +60,24 @@ const Home = () => {
       
       mapboxApiAccessToken={'pk.eyJ1Ijoic2Vhbi1mZW5lbG9uIiwiYSI6ImNraGMxbHBvOTAycWUycm1wczNpemZ0MGsifQ.phMK4dt1j_7wvlbYTbLWxg'}
       { ...viewPort }
-      onViewPortChange={(viewPort) => setViewPort(viewPort)}
+      onViewportChange={(viewPort) => setViewPort(viewPort)}
     >
-      <button onClick={goToNorthAmerica}>North America
+      <button className="map-menu" onClick={goToNorthAmerica}>North America
       </button>
-``
+
       {resorts.map((resort, index) => {
-        return <Marker 
-          key={index}
-          latitude={resort.lat}
-          longitude={resort.lon}
-        >
-          {/* <div>
-            <span>{resort.name}</span>
-          </div> */}
-          <img src=" https://img.icons8.com/color/48/000000/marker.png" />
-        </Marker>
+        return <Link to={`/resorts/${resort.name}`} key={index}>
+          <Marker 
+            latitude={resort.lat}
+            longitude={resort.lon}
+          >
+            {/* <div>
+              <span>{resort.name}</span>
+            </div> */}
+
+            <img src="https://img.icons8.com/material/24/000000/marker--v1.png" />
+          </Marker>
+        </Link>
       })}
     </ReactMapGL>
   </div>
@@ -89,12 +86,12 @@ const Home = () => {
 
 
 
-  return <div>
+  // return <div>
 
-    <h1>Hello World</h1>
+  //   <h1>Hello World</h1>
     
 
-  </div>
+  // </div>
 }
 
 export default Home
