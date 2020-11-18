@@ -86,7 +86,7 @@ const UpdateAccount = (props) => {
       <div className="form-group">
         <img src={formData.image} />
         <button
-          type="text"
+          type="image"
           value={formData.image}
           onClick={handleImageUpload}
           name="image"
