@@ -8,11 +8,13 @@ const SingleAccount = (props) => {
   const [formData, updateFormData] = useState({})
   const [text, updateText] = useState('')
   const token = localStorage.getItem('token')
+  const [favourites, updateFavourites] = useState([])
 
   useEffect(() => {
     axios.get(`/api/users/${props.match.params.username}`)
       .then((resp) => {
         updateFormData(resp.data)
+        updateFavourites(resp.data.favourites)
       })
   }, [])
 
@@ -39,7 +41,18 @@ const SingleAccount = (props) => {
         Featured
       </div>
       <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
+        <h5 className="card-title">Favourites</h5>
+
+        {formData && favourites.map((property, index) => {
+
+          return <div key={index}>
+
+            <Link to={`/resorts/${property}`}>{property}</Link>
+
+          </div>
+
+        })}
+
         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="#" className="btn btn-primary">Go somewhere</a>
       </div>

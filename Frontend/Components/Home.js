@@ -116,12 +116,13 @@ const Home = () => {
           <Marker 
             latitude={resort.lat}
             longitude={resort.lon}
+            
           >
             {/* <div>
               <span>{resort.name}</span>
             </div> */}
 
-            <img src="https://img.icons8.com/material/24/000000/marker--v1.png" />
+            <img className="marker" src="https://img.icons8.com/material/24/000000/marker--v1.png" />
           </Marker>
         </Link>
       })}

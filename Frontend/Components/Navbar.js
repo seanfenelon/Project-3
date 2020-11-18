@@ -17,7 +17,7 @@ const NavBar = (props) => {
     props.history.push('/resort')
   }
 
-  return <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  return <nav className="navbar navbar-expand-md navbar-dark nav-background fixed-top">
 
     <Link to="/" className="navbar-brand nav-brand">Ski Resorts</Link>
 
