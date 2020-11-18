@@ -69,7 +69,8 @@ const UpdateAccount = (props) => {
         if (result.event !== 'success') {
           return
         }
-        axios.put(`/api/users/${props.match.params.username}`, { url: result.info.secure_url }, {
+        console.log(result.info.secure_url)
+        axios.put(`/api/users/${props.match.params.username}`, { image: result.info.secure_url }, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then((res) => updateFormData(res.data))
@@ -87,7 +88,7 @@ const UpdateAccount = (props) => {
         <img src={formData.image} />
         <button
           type="image"
-          value={formData.image}
+          value={formData.image || ''}
           onClick={handleImageUpload}
           name="image"
         >Upload
@@ -159,3 +160,6 @@ const UpdateAccount = (props) => {
 }
 
 export default UpdateAccount
+
+
+//! Put this back in maybe
