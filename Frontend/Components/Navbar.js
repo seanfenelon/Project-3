@@ -7,6 +7,7 @@ const NavBar = (props) => {
 
   const account = window.location.pathname
   const accountSplit = account.split("/")
+  console.log(props)
   console.log(account)
   console.log(accountSplit)
   console.log(accountSplit[2])

@@ -22,7 +22,7 @@ const SingleAccount = (props) => {
   return <div className="container container-resorts">
     <div className="card-group">
 
-      <div className="card" key="index" id="long-card">
+      <div className="card" key="index" id="a-card">
         <img className="card-img-top" src={formData.image} alt="Card image cap"></img>
         <div className="card-body">
           <h5 className="card-title">{formData.username}</h5>

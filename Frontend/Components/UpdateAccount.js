@@ -160,6 +160,3 @@ const UpdateAccount = (props) => {
 }
 
 export default UpdateAccount
-
-
-//! Put this back in maybe
