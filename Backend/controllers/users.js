@@ -126,23 +126,6 @@ function addToFavourites(req, res) {
 
       console.log(user)
 
-      // const newfilter = [{ favourite }]
-
-      // for (i = 0; i < user.favourites.length; i++) {
-      //   const item = user.favourites
-
-      //   if (item[i] === favourite) {
-      //     console.log('same')
-
-      //   } else if (item[i] !== favourite) {
-      //     console.log('not same')
-      //     newfilter.push(user.favourites[i])
-
-      //   } else {
-      //     console.log('nothing')
-      //   }
-
-      // }
 
       const internalfavourite = favourite.favourite
 
