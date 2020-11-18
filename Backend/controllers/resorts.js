@@ -164,42 +164,20 @@ function deleteComment(req, res) {
     .catch(err => res.send(err))
 }
 
-function addToFavourites(req, res) {
 
-  const favourite = req.body
 
-  req.body.user = req.currentUser
-
-  const name = req.params.name
-
-  User
-    .findOne({ name: name })
-    .populate('favourites.user')
-    .then(user => {
-     
-      if (!user) return res.status(404).send({ message: 'User not found' })
-
-      user.favourites.push(favourite)
-
-      return favourite.save()
-    })
-
-    .then(user => res.send(user))
-    .catch(err => res.send(err))
-}
-
-function createUser(req, res) {
-  const body = req.body
-  console.log(body)
-  User
-    .create(body)
-    .then(user => {
-      console.log(user)
-      console.log('here')
-      res.send(user)
-    })
-    .catch(error => res.send(error))
-}
+// function createUser(req, res) {
+//   const body = req.body
+//   console.log(body)
+//   User
+//     .create(body)
+//     .then(user => {
+//       console.log(user)
+//       console.log('here')
+//       res.send(user)
+//     })
+//     .catch(error => res.send(error))
+// }
 
 
 module.exports = {
@@ -212,4 +190,5 @@ module.exports = {
   createComment,
   editComment,
   deleteComment
+  
 }

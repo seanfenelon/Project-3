@@ -8,7 +8,7 @@ const { Template } = require('webpack')
 function getUsers(req, res) {
   User
     .find()
-    .populate('user')
+    .populate('user.favourites')
     .then(userList => {
       res.send(userList)
     })
@@ -87,7 +87,7 @@ function logInUser(req, res) {
 
         return
       }
-      
+
       if (!user.validatePassword(req.body.password)) {
         res.send({ message: 'Incorrect password' })
 
@@ -107,11 +107,43 @@ function logInUser(req, res) {
 
 }
 
+function addToFavourites(req, res) {
+
+  const favourite = req.body
+  console.log(favourite)
+
+  favourite.user = req.currentUser
+
+  const name = req.currentUser._id
+  console.log(name)
+  console.log('here2')
+
+  User
+    .findById(name)
+    .populate('favourites.user')
+    .then(user => {
+      console.log('555')
+
+      if (!user) return res.status(404).send({ message: 'User not found' })
+
+      // user.favourites.list.push(favourite)
+      // return favourite.save()
+
+      user.favourites.set(favourite)
+
+      return user.save()
+    })
+
+    .then(user => res.send(user))
+    .catch(err => res.send(err))
+}
+
 module.exports = {
   createUser,
   logInUser,
   getUsers,
   singleUser,
   removeUser,
-  modifyUser
+  modifyUser,
+  addToFavourites
 }

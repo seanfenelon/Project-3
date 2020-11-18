@@ -13,15 +13,17 @@ const SingleResort = (props) => {
   const [singleResort, updateSingleResort] = useState({})
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
+  const [list, setList] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
   const star = <FontAwesomeIcon icon={faStar} size="3x" />
 
+  console.log(text)
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
       .then((axiosResponse) => {
         updateSingleResort(axiosResponse.data.resort)
         updateWeather(axiosResponse.data.weather)
-
+        setList(axiosResponse.data.resort.name)
       })
   }, [])
 
@@ -32,6 +34,18 @@ const SingleResort = (props) => {
       .then(resp => {
         setText('')
         updateSingleResort(resp.data)
+      })
+  }
+
+  function addFavourite() {
+    axios.post(`/api/resorts/${singleResort.name}/favourite`, { list }, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(resp => {
+
+        console.log(resp.data)
+        console.log('added')
+
       })
   }
 
@@ -60,7 +74,7 @@ const SingleResort = (props) => {
 
       <div className="card-body">
         <div className="resort-info-upper">
-          <button className="star">{star}</button>
+          <button onClick={addFavourite} className="star">{star}</button>
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
           <p className="card-text card-text-single">{singleResort.description}</p>
