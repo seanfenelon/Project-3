@@ -120,7 +120,7 @@ mongoose.connect(
             lat: 46.1921,
             image: 'https://i.imgur.com/6Sv9m4M.jpg',
             user: users[0],
-            dewcription: 'Car-free, sunny village with compact centre, ski-in/ski-out lodgings, shady snowsure slopes, great position on the Portes du Soleil circuit, leading resort for freestylers (five terrain parks and a super-pipe), plenty of good off-piste, access to the legendary Swiss Wall, and a renowned kids club.'
+            description: 'Car-free, sunny village with compact centre, ski-in/ski-out lodgings, shady snowsure slopes, great position on the Portes du Soleil circuit, leading resort for freestylers (five terrain parks and a super-pipe), plenty of good off-piste, access to the legendary Swiss Wall, and a renowned kids club.'
           },
           {
             name: 'Kitzbuhel',
@@ -131,7 +131,7 @@ mongoose.connect(
             lat: 47.4492,
             image: 'https://i.imgur.com/z7TAVEn.jpg',
             user: users[0],
-            desctiption: 'Kitzbühel is an idyllic alpine village, within easy reach of three airports, boasting reliable snowfall and a variety of ski runs - what more could you want?'
+            description: 'Kitzbühel is an idyllic alpine village, within easy reach of three airports, boasting reliable snowfall and a variety of ski runs - what more could you want?'
           },
           {
             name: 'St Anton am Arlberg',
