@@ -110,15 +110,15 @@ form input {
 
 /* ACCOUNT PAGE */
 
-#long-card {
+#a-card {
   width: 18rem;
-  height: 25rem;
+  height: 22rem;
   margin: .7rem;
 }
 
 #wide-card {
-  width: 54rem;
-  height: 15rem;
+  width: 50rem;
+  height: 22rem;
   margin: .7rem;
 }
 
