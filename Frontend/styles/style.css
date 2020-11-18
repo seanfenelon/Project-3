@@ -147,6 +147,17 @@ font-size: .8rem!important;
   right: 0;
   background: transparent;
   border-style: none;
+  transition: .3s
+}
+
+.star:hover {
+  color: gold;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border-style: none;
 }
 
 .star:focus, .star-active:focus {
@@ -162,6 +173,8 @@ font-size: .8rem!important;
   background: transparent;
   border-style: none;
 }
+
+
 
 .card-single {
   display: flex;
