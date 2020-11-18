@@ -8,14 +8,28 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const SingleResort = (props) => {
-
+  const [favouriteToggle, updateFavouriteToggle] = useState(false)
   const token = localStorage.getItem('token')
   const [singleResort, updateSingleResort] = useState({})
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
-  const [list, setList] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
   const star = <FontAwesomeIcon icon={faStar} size="3x" />
+
+  const favourite = singleResort.name
+
+
+  const [isActive, setActive] = useState(false)
+
+  const toggleClass = () => {
+    setActive(!isActive)
+  }
+
+
+
+
+
+
 
   console.log(text)
   useEffect(() => {
@@ -23,7 +37,7 @@ const SingleResort = (props) => {
       .then((axiosResponse) => {
         updateSingleResort(axiosResponse.data.resort)
         updateWeather(axiosResponse.data.weather)
-        setList(axiosResponse.data.resort.name)
+
       })
   }, [])
 
@@ -38,15 +52,37 @@ const SingleResort = (props) => {
   }
 
   function addFavourite() {
-    axios.post(`/api/resorts/${singleResort.name}/favourite`, { list }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(resp => {
+    toggleClass()
 
-        console.log(resp.data)
-        console.log('added')
-
+    if (!favouriteToggle) {
+      axios.post(`/api/resorts/${singleResort.name}/favourite`, { favourite }, {
+        headers: { Authorization: `Bearer ${token}` }
       })
+        .then(resp => {
+
+          console.log(resp.data)
+          console.log('added')
+
+        })
+      updateFavouriteToggle(true)
+
+
+    } else if (favouriteToggle) {
+      console.log('deletion')
+      console.log(token)
+
+      axios.put(`/api/resorts/${singleResort.name}/favourite/${favourite}`, { favourite }, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(resp => {
+          
+          console.log(resp.data)
+          console.log('deleted')
+
+        })
+
+      updateFavouriteToggle(false)
+    }
   }
 
 
@@ -74,7 +110,9 @@ const SingleResort = (props) => {
 
       <div className="card-body">
         <div className="resort-info-upper">
-          <button onClick={addFavourite} className="star">{star}</button>
+
+          <button className={isActive ? 'star-active' : 'star'} onClick={addFavourite} >{star}</button>
+
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
           <p className="card-text card-text-single">{singleResort.description}</p>
@@ -142,7 +180,7 @@ const SingleResort = (props) => {
       </div>
 
     </div>
-  </div>
+  </div >
 
 }
 

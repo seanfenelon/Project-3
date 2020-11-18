@@ -37,6 +37,8 @@ router.route('/resorts/:name/comments')
 
 router.route('/resorts/:name/favourite')
   .post(secureRoute, userController.addToFavourites)
+router.route('/resorts/:name/favourite/:favouritename')
+  .put(secureRoute, userController.deleteFromFavourites)
 
 router.route('/resorts/:name/comments/:commentId')
   .put(secureRoute, resortsController.editComment)

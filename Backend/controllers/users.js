@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 const axios = require('axios')
 const { Template } = require('webpack')
+const { faVrCardboard } = require('@fortawesome/free-solid-svg-icons')
 
 
 function getUsers(req, res) {
@@ -113,24 +114,98 @@ function addToFavourites(req, res) {
   const favourite = req.body
   console.log(favourite)
 
-  favourite.user = req.currentUser
-
   const name = req.currentUser._id
-  console.log(name)
-  console.log('here2')
 
   User
     .findById(name)
-    .populate('favourites.user')
+
     .then(user => {
       console.log('555')
 
       if (!user) return res.status(404).send({ message: 'User not found' })
 
-      // user.favourites.list.push(favourite)
-      // return favourite.save()
+      console.log(user)
 
-      user.favourites.set(favourite)
+      // const newfilter = [{ favourite }]
+
+      // for (i = 0; i < user.favourites.length; i++) {
+      //   const item = user.favourites
+
+      //   if (item[i] === favourite) {
+      //     console.log('same')
+
+      //   } else if (item[i] !== favourite) {
+      //     console.log('not same')
+      //     newfilter.push(user.favourites[i])
+
+      //   } else {
+      //     console.log('nothing')
+      //   }
+
+      // }
+
+      const internalfavourite = favourite.favourite
+
+      const containsFavourite = user.favourites.includes(internalfavourite)
+
+      if (containsFavourite) {
+        return console.log('already here')
+
+      } else if (!containsFavourite) {
+        user.favourites.push(favourite.favourite)
+      }
+
+
+      console.log(containsFavourite)
+      console.log(internalfavourite)
+      return user.save()
+    })
+
+    .then(user => res.send(user))
+    .catch(err => res.send(err))
+}
+
+function deleteFromFavourites(req, res) {
+
+  const favourite = req.params.favouritename
+  console.log(favourite)
+
+  const name = req.currentUser._id
+
+  User
+    .findById(name)
+
+    .then(user => {
+
+      if (!user) return res.status(404).send({ message: 'User not found' })
+
+      const newfilter = []
+
+      for (i = 0; i < user.favourites.length; i++) {
+        const item = user.favourites
+
+        if (item[i] === favourite) {
+          console.log('same')
+
+        } else if (item[i] !== favourite) {
+          console.log('not same')
+          newfilter.push(user.favourites[i])
+
+        } else {
+          console.log('nothing')
+        }
+
+      }
+
+      console.log(user.favourites)
+
+      const favourites = user.favourites
+
+      favourites.splice(0, favourites.length)
+
+      newfilter.forEach((favourite) => {
+        favourites.push(favourite)
+      })
 
       return user.save()
     })
@@ -146,5 +221,6 @@ module.exports = {
   singleUser,
   removeUser,
   modifyUser,
-  addToFavourites
+  addToFavourites,
+  deleteFromFavourites
 }

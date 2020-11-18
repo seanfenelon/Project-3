@@ -141,6 +141,21 @@ font-size: .8rem!important;
 
 .star {
   color: gold;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border-style: none;
+}
+
+.star:focus, .star-active:focus {
+  outline: none;
+}
+
+.star-active {
+  color: gold;
+  opacity: 1;
   position: absolute;
   top: 0;
   right: 0;

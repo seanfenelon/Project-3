@@ -26,6 +26,7 @@ mongoose.connect(
             image: 'https://i.imgur.com/4f1MbGO.png?1',
             isAdmin: true,
             favourites: []
+
           },
           {
             username: 'Test',
@@ -35,6 +36,7 @@ mongoose.connect(
             image: 'https://i.imgur.com/ioS25on.jpg',
             isAdmin: false,
             favourites: []
+
           }
         ])
       })

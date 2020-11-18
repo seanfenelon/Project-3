@@ -98,7 +98,7 @@ function createComment(req, res) {
       if (!resort) return res.status(404).send({ message: 'Resort not found' })
 
       resort.comments.push(comment)
-
+      console.log(comment)
       return resort.save()
     })
 
@@ -190,5 +190,5 @@ module.exports = {
   createComment,
   editComment,
   deleteComment
-  
+
 }
