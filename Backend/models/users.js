@@ -4,20 +4,20 @@ const mongooseHidden = require('mongoose-hidden')
 const uniqueValidator = require('mongoose-unique-validator')
 //hmmm
 
-const favouriteSchema = new mongoose.Schema({
+// const favouriteSchema = new mongoose.Schema({
 
-  list: { type: String, required: true },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-  
-}, {
-})
+//   list: { type: String, required: true },
+//   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+
+// }, {
+// })
 
 const schema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true }, 
-  email: { type: String, required: true, unique: true }, 
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  isAdmin: { type: Boolean },
-  favourites: [ favouriteSchema ]
+  image: { type: String },
+  isAdmin: { type: Boolean }
 })
 
 schema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true } }))

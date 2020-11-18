@@ -14,6 +14,9 @@ import Navbar from './components/Navbar'
 import JoinUs from './components/JoinUs'
 import Resorts from './components/Resorts'
 import SingleResort from './components/SingleResort'
+import SingleAccount from './components/SingleAccount'
+import UpdateAccount from './components/UpdateAccount'
+import ImageUpload from './components/ImageUpload'
 
 const App = () => (
   <BrowserRouter>
@@ -25,6 +28,10 @@ const App = () => (
       <Route exact path="/resorts" component={Resorts} />
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
+      <Route exact path="/users/:username" component={SingleAccount} />
+      <Route exact path="/users/edit/:username" component={UpdateAccount} />
+      <Route exact path="/users/:username/image" component={ImageUpload} />
+
     </Switch> 
   </BrowserRouter>
 )

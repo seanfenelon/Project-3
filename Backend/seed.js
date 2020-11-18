@@ -19,17 +19,19 @@ mongoose.connect(
       .then(() => {
         return User.create([
           {
-            username: 'admin',
+            username: 'Admin',
             email: 'admin@admin.com',
             password: 'admin',
             passwordConfirmation: 'admin',
+            image: 'https://i.imgur.com/4f1MbGO.png?1',
             isAdmin: true
           },
           {
-            username: 'test',
+            username: 'Test',
             email: 'test@test.com',
             password: 'test',
             passwordConfirmation: 'test',
+            image: 'https://i.imgur.com/ioS25on.jpg',
             isAdmin: false
           }
         ])
@@ -39,7 +41,7 @@ mongoose.connect(
         console.log(`${users.length} users have been created`)
         return users
       })
-//hmm
+      //hmm
       .then((users) => {
         return Resorts.create([
 

@@ -66,7 +66,7 @@
 
 
 form {
-  width: 20%;
+  width: 260px;
   text-align: center;
   align-self: center;
 }
@@ -108,6 +108,34 @@ form input {
   left: 100px;
 }
 
+/* ACCOUNT PAGE */
+
+#long-card {
+  width: 18rem;
+  height: 25rem;
+  margin: .7rem;
+}
+
+#wide-card {
+  width: 54rem;
+  height: 15rem;
+  margin: .7rem;
+}
+
+#a-card img {
+  width: 100%;
+  height: 10rem;
+}
+
+#a-btn-resort {
+font-size: .8rem!important;
+}
+
+#a-card-text {
+  font-size: .7rem;
+  overflow: scroll;
+  height: 3rem;
+}
 
 /* SINGLE RESORT */
 

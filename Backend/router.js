@@ -7,7 +7,7 @@ const secureRoute = require('./middleware/secureRoute')
 router.route('/resorts')
   .get(resortsController.getResorts)
   .post(/*secureRoute*/resortsController.addResort)
-//hhh
+
 // ! Get clarification over the purpose of this
 // router.route('/resorts-proxy/:name')
 //   .get(resortsController.singleProxyResort)
@@ -23,6 +23,15 @@ router.route('/joinus')
 router.route('/login')
   .post(userController.logInUser)
 
+router.route('/users')
+  .get(userController.getUsers)
+
+router.route('/users/:username')
+  .get(userController.singleUser)
+  .delete(secureRoute, userController.removeUser)
+  .put(secureRoute, userController.modifyUser)
+
+router.route('/resorts/:resortId/comments')
 router.route('/resorts/:name/comments')
   .post(secureRoute, resortsController.createComment)
 
