@@ -111,7 +111,7 @@ const SingleResort = (props) => {
       <div className="card-body">
         <div className="resort-info-upper">
 
-          <button className={isActive ? 'star-active' : 'star'} onClick={addFavourite} >{star}</button>
+          {token && <button className={isActive ? 'star-active' : 'star'} onClick={addFavourite} >{star}</button>}
 
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
