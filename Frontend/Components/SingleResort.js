@@ -5,6 +5,7 @@ import { getUserId, isCreator } from '../lib/auth'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const SingleResort = (props) => {
 
@@ -13,6 +14,7 @@ const SingleResort = (props) => {
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
+  const star = <FontAwesomeIcon icon={faStar} size="3x" />
 
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
@@ -48,8 +50,9 @@ const SingleResort = (props) => {
   return <div className="container container-custom">
 
     <div className="card card-single">
+
       <div className="text-center">
-        <img className="card-img-top-single" src={`${singleResort.image}`}  alt="Card image cap"></img>
+        <img className="card-img-top-single" src={`${singleResort.image}`} alt="Card image cap"></img>
         <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
         <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
 
@@ -57,6 +60,7 @@ const SingleResort = (props) => {
 
       <div className="card-body">
         <div className="resort-info-upper">
+          <button className="star">{star}</button>
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
           <p className="card-text card-text-single">{singleResort.description}</p>
@@ -75,7 +79,7 @@ const SingleResort = (props) => {
           <h5>Comments</h5>
 
           <div className="comments">
-            
+
             {singleResort.comments && singleResort.comments.map(comment => {
 
               return <div key={comment._id} className="row comments-spaced text-center">
