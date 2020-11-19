@@ -103,9 +103,13 @@ const SingleResort = (props) => {
 
       <div className="text-center">
         <img className="card-img-top-single" src={`${singleResort.image}`} alt="Card image cap"></img>
-        <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
-        <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
-
+        <p className="resort-single-side"><strong>Opening times:</strong><br />{singleResort.openingtimes}</p>
+        <p className="resort-single-side"><strong>Adult ticket:</strong><br />{singleResort.adultticket}</p>
+        <p className="resort-single-side"><strong>Child ticket:</strong><br />{singleResort.childticket}</p>
+        <p className="resort-single-side"><strong>Slope length:</strong><br />{singleResort.slopeslength}</p>
+        <p className="resort-single-side"><strong>Ski lifts:</strong><br />{singleResort.skilifts}</p>
+        <p className="resort-single-side"><strong>Top elevation:</strong><br />{singleResort.top_elevation}</p>
+        <p className="resort-single-side"><strong>Bottom elevation:</strong><br />{singleResort.bottom_elevation}</p>
       </div>
 
       <div className="card-body">
