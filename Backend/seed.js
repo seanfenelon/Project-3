@@ -63,7 +63,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '600km',
             adultticket: '€64.50',
-            childticket: '€51.60'
+            childticket: '€51.60',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Val D-Isere',
@@ -79,7 +81,9 @@ mongoose.connect(
             openingtimes: '09:30 - 16:30',
             slopeslength: '300km',
             adultticket: '€62',
-            childticket: '€50'
+            childticket: '€50',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Tignes',
@@ -95,7 +99,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '200km',
             adultticket: '€62',
-            childticket: '€50'
+            childticket: '€50',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Morzine',
@@ -111,7 +117,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '600km',
             adultticket: '€64.50',
-            childticket: '€51.60'
+            childticket: '€51.60',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Les Deux Alpes',
@@ -127,7 +135,9 @@ mongoose.connect(
             openingtimes: '09:17 - 17:00',
             slopeslength: '200km',
             adultticket: '€53',
-            childticket: '€42.50'
+            childticket: '€42.50',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Les Arcs',
@@ -143,7 +153,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '200km',
             adultticket: '€55',
-            childticket: '€44'
+            childticket: '€44',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Avoriaz',
@@ -159,7 +171,9 @@ mongoose.connect(
             openingtimes: '09:00 - 17:00',
             slopeslength: '580km',
             adultticket: '€59',
-            childticket: '€44'
+            childticket: '€44',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Kitzbuhel',
@@ -175,7 +189,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '181km',
             adultticket: '€59.50',
-            childticket: '€29.50'
+            childticket: '€29.50',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'St Anton am Arlberg',
@@ -191,7 +207,9 @@ mongoose.connect(
             openingtimes: '08:45 - 16:30',
             slopeslength: '303km',
             adultticket: '€59',
-            childticket: '€35'
+            childticket: '€35',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Mammoth Mountain',
@@ -207,7 +225,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:00',
             slopeslength: '89.8km',
             adultticket: '$199',
-            childticket: '$80'
+            childticket: '$80',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Whistler',
@@ -223,7 +243,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:00',
             slopeslength: '200km',
             adultticket: '$64.50',
-            childticket: '$51.60'
+            childticket: '$51.60',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'The Remarkables',
@@ -239,7 +261,9 @@ mongoose.connect(
             openingtimes: '09:00 - 16:00',
             slopeslength: '10km',
             adultticket: 'NZ$ 129',
-            childticket: 'NZ$ 69'
+            childticket: 'NZ$ 69',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Rusutsu',
@@ -255,7 +279,9 @@ mongoose.connect(
             openingtimes: '09:00 - 20:00',
             slopeslength: '42km',
             adultticket: '¥ 6200',
-            childticket: '¥ 3200'
+            childticket: '¥ 3200',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Jackson Hole',
@@ -271,7 +297,9 @@ mongoose.connect(
             openingtimes: '09:00 - 16:00',
             slopeslength: '116km',
             adultticket: 'US$ 175',
-            childticket: 'US$ 105'
+            childticket: 'US$ 105',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Aspen Snowmass',
@@ -287,7 +315,9 @@ mongoose.connect(
             openingtimes: '08:30 - 15:30',
             slopeslength: '237km',
             adultticket: 'US$ 184',
-            childticket: 'US$ 126'
+            childticket: 'US$ 126',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Vail',
@@ -303,7 +333,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:00',
             slopeslength: '234km',
             adultticket: 'US$ 219',
-            childticket: 'US$ 151'
+            childticket: 'US$ 151',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Alta',
@@ -319,7 +351,9 @@ mongoose.connect(
             openingtimes: '09:15 - 16:30',
             slopeslength: '116km',
             adultticket: 'US$ 125',
-            childticket: 'US$ 65'
+            childticket: 'US$ 65',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Revelstoke',
@@ -335,7 +369,9 @@ mongoose.connect(
             openingtimes: '08:30 - 15:30',
             slopeslength: '55km',
             adultticket: 'C$ 129',
-            childticket: 'C$ 46'
+            childticket: 'C$ 46',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Perisher',
@@ -351,7 +387,9 @@ mongoose.connect(
             openingtimes: '08:30 - 17:00',
             slopeslength: '100km',
             adultticket: 'AU$ 64.50',
-            childticket: 'AU$ 51.60'
+            childticket: 'AU$ 51.60',
+            userRating: 0,
+            numOfRatings: 0
           },
           {
             name: 'Bear Mountain',
@@ -367,7 +405,9 @@ mongoose.connect(
             openingtimes: '08:30 - 16:30',
             slopeslength: '27.2km',
             adultticket: '$94.50',
-            childticket: '$71.60'
+            childticket: '$71.60',
+            userRating: 0,
+            numOfRatings: 0
           }
         ])
       })

@@ -34,7 +34,7 @@ const SingleResort = (props) => {
 
 
 
-  console.log(text)
+  // console.log(text)
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
       .then((axiosResponse) => {
@@ -102,7 +102,7 @@ const SingleResort = (props) => {
 
   function handleNewRating(rating) {
       
-    const totalRatings = (singleResort.numOfRatings + 1)
+    const totalRatings = singleResort.numOfRatings + 1
     const newAverage = (((singleResort.userRating) * singleResort.numOfRatings) + rating) / totalRatings
     const token = localStorage.getItem('token')
 
@@ -117,7 +117,7 @@ const SingleResort = (props) => {
     })
       .then(resp => {
         updateSingleResort(resp.data)
-        updateRating(newAverage)
+        // updateRating(newAverage)
       })
 
   }

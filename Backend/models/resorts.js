@@ -25,7 +25,9 @@ const resortsSchema = new mongoose.Schema({
   slopeslength: { type: String },
   adultticket: { type: String },
   childticket: { type: String },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  userRating: { type: Number, required: true },
+  numOfRatings: { type: Number, required: true }
 })
 
 
