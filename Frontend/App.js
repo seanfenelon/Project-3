@@ -17,7 +17,7 @@ import SingleResort from './components/SingleResort'
 import SingleAccount from './components/SingleAccount'
 import UpdateAccount from './components/UpdateAccount'
 import ImageUpload from './components/ImageUpload'
-// import StarRating from './components/Star'
+
 
 const App = () => (
   <BrowserRouter>
