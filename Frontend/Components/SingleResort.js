@@ -112,6 +112,7 @@ const SingleResort = (props) => {
     }
 
     console.log(newRatingInfo)
+    console.log(singleResort)
     axios.put(`/api/resorts/${singleResort.name}`, newRatingInfo, {
       headers: { Authorization: `Bearer ${token}` }
     })
