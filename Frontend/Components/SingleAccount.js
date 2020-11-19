@@ -31,7 +31,7 @@ const SingleAccount = (props) => {
           <h6>{formData.username}</h6>
           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
           <Link to={`/users/edit/${props.match.params.username}`} className="btn btn-dark btn-resort">Update your account</Link>
-          <Link to="/resorts/:name" className="btn btn-danger btn-resort">Delete {deleteIcon}</Link>
+
         </div>
       </div>
 
