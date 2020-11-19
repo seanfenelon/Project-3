@@ -369,7 +369,7 @@ mongoose.connect(
             lat: 50.9981,
             image: 'https://i.imgur.com/UVT4qeu.jpg',
             user: users[0],
-            description: 'Get revved up and get stoked at Revelstoke Mountain Resort! Corny catch phrases aside, Revelstoke ski resort is continuing to transform itself into becoming one of the biggest and best resorts in Canada. Revelstoke Canada has long been known by cat skiers and heli skiers for the legendary Selkirk powder that falls in abundance. Realising the potential for the perfect location where snow dumps, Revelstoke Mountain Resort opened in the season of 2007-08 and development continues to turn this powder paradise into a mega-resort.',
+            description: 'Get revved up and get stoked at Revelstoke Mountain Resort! Corny catch phrases aside, Revelstoke ski resort is continuing to transform itself into becoming one of the biggest and best resorts in Canada. Revelstoke Canada has long been known by cat skiers and heli skiers for the legendary Selkirk powder that falls in abundance.',
             skilifts: '5',
             openingtimes: '08:30 - 15:30',
             slopeslength: '55km',
@@ -387,7 +387,7 @@ mongoose.connect(
             lat: -36.4055,
             image: 'https://i.imgur.com/QsyCGul.jpg',
             user: users[0],
-            description: 'Perisher NSW is a leading Australian ski resort with plenty of bells and whistles. By Australian standards, Perisher Ski Resort is mega, with the largest skiable terrain and the greatest numbers of lifts in Australia as well as the Southern hemisphere. Perisher (known as Perisher Blue prior to 2009) became so big through the amalgamation of the inter-connected ski areas and villages of Perisher Valley, Smiggin Holes, Blue Cow and Guthega.',
+            description: 'Perisher NSW is a leading Australian ski resort with plenty of bells and whistles. By Australian standards, Perisher Ski Resort is mega, with the largest skiable terrain and the greatest numbers of lifts in Australia as well as the Southern hemisphere.',
             skilifts: '41',
             openingtimes: '08:30 - 17:00',
             slopeslength: '100km',
@@ -405,7 +405,7 @@ mongoose.connect(
             lat: 34.2277,
             image: 'https://i.imgur.com/oUZvlIW.jpg',
             user: users[0],
-            description: 'Located in Southern California’s San Bernardino Mountains, Bear Mountain offers a 200-acre winter playground for skiers and snowboarders. Along with Snow Summit, Bear Mountain makes up the Big Bear Mountain Resort. With 85% of Bear Mountain covered by over 200 freestyle features, the mountain features over 165 beginner to advanced rails, boxes, walls and other features and 4 pipes (8 foot, 13 foot, 18 foot and a Jib Pipe) that include Southern California’s only Superpipe, along with Bear Mountain’s Skill Builder Parks geared toward freestyle skiers with beginner skills.',
+            description: 'Located in Southern California’s San Bernardino Mountains, Bear Mountain offers a 200-acre winter playground for skiers and snowboarders. Along with Snow Summit, Bear Mountain makes up the Big Bear Mountain Resort.',
             skilifts: '9',
             openingtimes: '08:30 - 16:30',
             slopeslength: '27.2km',
@@ -414,7 +414,6 @@ mongoose.connect(
             userRating: 4,
             numOfRatings: 0
           },
-
           {
             name: 'Niseko United',
             country: 'Japan',
@@ -433,7 +432,6 @@ mongoose.connect(
             userRating: 4,
             numOfRatings: 0
           },
-
           {
             name: 'Niseko United',
             country: 'Japan',
@@ -451,12 +449,135 @@ mongoose.connect(
             childticket: '¥ 6400,-',
             userRating: 4,
             numOfRatings: 0
+          },    
+          {
+            name: 'Szymoszkowa',
+            country: 'Poland',
+            top_elevation: 1126,
+            bottom_elevation: 865,
+            lon: 19.9291,
+            lat: 49.2929,
+            image: 'https://i.imgur.com/kX9EqPL.jpg',
+            user: users[0],
+            description: 'The ski resort Szymoszkowa is located in Zakopane (Poland, Lesser Poland (Województwo małopolskie)). For skiing and snowboarding, there are 4 km of slopes available. 2 lifts transport the guests. The winter sports area is situated between the elevations of 865 and 1,126 m.',
+            skilifts: '2',
+            openingtimes: '09:00 - 20:00',
+            slopeslength: '4km',
+            adultticket: 'PLN 110,-',
+            childticket: 'PLN 100,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Rosa Khutor',
+            country: 'Russia',
+            top_elevation: 2320,
+            bottom_elevation: 940,
+            lon: 43.6751,
+            lat: 40.2927,
+            image: 'https://i.imgur.com/aG74jWi.jpg',
+            user: users[0],
+            description: 'The ski resort Rosa Khutor is located in Krasnaya Polyana (Sochi) (Southern Russia, Krasnodar). For skiing and snowboarding, there are 102 km of slopes available. 26 lifts transport the guests. The winter sports area is situated between the elevations of 940 and 2,320 m.',
+            skilifts: '26',
+            openingtimes: '08:45 - 15.45',
+            slopeslength: '102km',
+            adultticket: 'RUB 3900,-',
+            childticket: 'RUB 1900,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Zavyalikha',
+            country: 'Russia',
+            top_elevation: 840,
+            bottom_elevation: 414,
+            lon: 58.521716,
+            lat: 54.795211,   
+            image: 'https://i.imgur.com/5c90aSU.jpg',
+            user: users[0],
+            description: 'The ski resort Zavjalikha is located in the Chelyabinsk Oblast (Ural Federal District). For skiing and snowboarding, there are 22 km of slopes available. 4 lifts transport the guests. The winter sports area is situated between the elevations of 414 and 840 m.',
+            skilifts: '4',
+            openingtimes: '08:45 - 15.45',
+            slopeslength: '22km',
+            adultticket: 'RUB 2600,-',
+            childticket: 'RUB 1600,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Bláfjöll',
+            country: 'Iceland',
+            top_elevation: 700,
+            bottom_elevation: 460,
+            lon: -21.6688,
+            lat: 63.9855,   
+            image: 'https://i.imgur.com/5zaMv33.jpg',
+            user: users[0],
+            description: 'The ski resort Bláfjöll is located in South Iceland (Iceland). For skiing and snowboarding, there are 15 km of slopes available. 15 lifts transport the guests. The winter sports area is situated between the elevations of 460 and 700 m.',
+            skilifts: '15',
+            openingtimes: '10:00 - 17.00',
+            slopeslength: '15km',
+            adultticket: 'ISK 3950,-',
+            childticket: 'ISK 1500,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Big Wood',
+            country: 'Russia',
+            top_elevation: 1047,
+            bottom_elevation: 380,
+            lon: 33.693718,
+            lat: 67.609813,   
+            image: 'https://i.imgur.com/aFJKqNl.jpg',
+            user: users[0],
+            description: 'The ski resort Big Wood is located in the Murmansk Oblast (Northwest Russia). For skiing and snowboarding, there are 26.7 km of slopes available. 8 lifts transport the guests. The winter sports area is situated between the elevations of 380 and 1,047 m.',
+            skilifts: '8',
+            openingtimes: '10:00 - 20.00',
+            slopeslength: '26.7km',
+            adultticket: 'RUB 1600,-',
+            childticket: 'RUB 1300,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Ulaanbaatar',
+            country: 'Mongolia',
+            top_elevation: 1596,
+            bottom_elevation: 1376,
+            lon: 107.033691,
+            lat: 47.878179,
+            image: 'https://i.imgur.com/YnfSlbG.jpg',
+            user: users[0],
+            description: 'The ski resort Sky Resort – Ulaanbaatar is located in Ulaanbaatar (Mongolia). For skiing and snowboarding, there are 6 km of slopes available. 4 lifts transport the guests. The winter sports area is situated between the elevations of 1,376 and 1,596 m.',
+            skilifts: '4',
+            openingtimes: '09:00 - 22:00',
+            slopeslength: '6km',
+            adultticket: 'RUB 1600,-',
+            childticket: 'RUB 1300,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+          {
+            name: 'Oukaimeden',
+            country: 'Morocco',
+            top_elevation: 2610,
+            bottom_elevation: 3268,
+            lon: -7.864063,
+            lat: 31.202755,
+            image: 'https://i.imgur.com/ewCHk05.jpg',
+            user: users[0],
+            description: 'The ski resort Oukaïmeden is located in the Marrakesh-Tensift-El Haouz Region (Morocco). For skiing and snowboarding, there are 10 km of slopes available. 7 lifts transport the guests. The winter sports area is situated between the elevations of 2,610 and 3,268 m.',
+            skilifts: '7',
+            openingtimes: '09:00 - 22:00',
+            slopeslength: '10km',
+            adultticket: 'MAD 500,-',
+            childticket: 'MAD 700,-',
+            userRating: 4,
+            numOfRatings: 0
           }
          
-          
-
-
-
+  
         ])
       })
 
