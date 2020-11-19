@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { getUserId, isCreator } from '../lib/auth'
+import Rating from '@material-ui/lab/Rating'
+import Box from '@material-ui/core/Box'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -13,12 +15,14 @@ const SingleResort = (props) => {
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
+  const [rating, updateRating] = useState(0)
 
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
       .then((axiosResponse) => {
         updateSingleResort(axiosResponse.data.resort)
         updateWeather(axiosResponse.data.weather)
+        updateRating(axiosResponse.data.resort.userRating)
 
       })
   }, [])
@@ -44,13 +48,34 @@ const SingleResort = (props) => {
       })
   }
 
+  function handleNewRating(rating) {
+      
+    const totalRatings = (singleResort.numOfRatings + 1)
+    const newAverage = (((singleResort.userRating) * singleResort.numOfRatings) + rating) / totalRatings
+    const token = localStorage.getItem('token')
 
+    const newRatingInfo = {
+      userRating: newAverage,
+      numOfRatings: totalRatings
+    }
+
+    console.log(newRatingInfo)
+    axios.put(`/api/resorts/${singleResort.name}`, newRatingInfo, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(resp => {
+        updateSingleResort(resp.data)
+        updateRating(newAverage)
+      })
+
+  }
+ 
   return <div className="container container-custom">
 
     <div className="card card-single">
       <div className="text-center">
         <img className="card-img-top-single" src={`${singleResort.image}`}  alt="Card image cap"></img>
-        <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
+        <p><strong>Top Elevationsss:</strong> {singleResort.top_elevation}</p>
         <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
 
       </div>
@@ -68,6 +93,27 @@ const SingleResort = (props) => {
               })}
             </div>
           </div>
+        </div>
+
+
+        <div className="rating">
+          <span id="rateMe1"></span>
+        </div>
+        <div className="rating">
+          <Rating
+            name="hover-feedback"
+            value={rating}
+            precision={0.5}
+            onChange={(event, newRating) => {
+              updateRating(newRating)
+              handleNewRating(newRating)
+
+            }}
+            // onChangeActive={(event, newHover) => {
+            //   setHover(newHover)
+            // }}
+          />
+          {/* {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>} */}
         </div>
 
 

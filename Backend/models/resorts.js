@@ -20,7 +20,9 @@ const resortsSchema = new mongoose.Schema({
   image: { type: String, required: true },
   comments: [ commentSchema ],
   description: { type: String },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  userRating: { type: Number },
+  numOfRatings: { type: Number }
 })
 
 
