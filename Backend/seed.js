@@ -333,7 +333,7 @@ mongoose.connect(
             openingtimes: '08:30 - 16:00',
             slopeslength: '234km',
             userRating: 0,
-            numOfRatings: 0
+            numOfRatings: 0,
             adultticket: 'US$ 219,-',
             childticket: 'US$ 151,-'
           },
