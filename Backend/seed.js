@@ -25,6 +25,9 @@ mongoose.connect(
             passwordConfirmation: 'admin',
             image: 'https://i.imgur.com/4f1MbGO.png?1',
             isAdmin: true,
+            firstname: 'Top',
+            lastname: 'Skier',
+            bio: 'This is my bio section. I love to ski and get on it with the lads...',
             favourites: []
 
           },
@@ -35,6 +38,8 @@ mongoose.connect(
             passwordConfirmation: 'test',
             image: 'https://i.imgur.com/ioS25on.jpg',
             isAdmin: false,
+            firstname: 'Test',
+            lastname: 'Snowboader',
             favourites: []
 
           }

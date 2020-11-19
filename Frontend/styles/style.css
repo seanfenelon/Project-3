@@ -120,20 +120,20 @@ form input {
 /* ACCOUNT PAGE */
 
 #a-card {
-  width: 18rem;
-  height: 22rem;
+  width: 22rem;
+  height: 27rem;
   margin: .7rem;
 }
 
 #wide-card {
-  width: 50rem;
+  width: 18rem;
   height: 22rem;
   margin: .7rem;
 }
 
 #a-card img {
   width: 100%;
-  height: 10rem;
+  height: 13rem;
 }
 
 #a-btn-resort {
