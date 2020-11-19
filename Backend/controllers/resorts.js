@@ -39,19 +39,12 @@ function singleResort(req, res) {
     .then(resort => {
       axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${resort.lat}&lon=${resort.lon}&exclude=hourly,minutely&appid=b12529b2552a67b6714b256d3318424c`)
         .then(resp => {
-<<<<<<< HEAD
-          res.send({ resort: resort, weather: resp.data })
-        })
-  
-      
-=======
 
 
           res.send({ resort: resort, weather: resp.data })
         })
 
 
->>>>>>> development
 
     })
     // .then(resort => {
