@@ -64,7 +64,7 @@ const Home = () => {
     const WorldViewport = {
       latitude: 46.2276,
       longitude: 2.2137,
-      zoom: 3,
+      zoom: 4,
       height: '100vh',
       width: '100vw'
     }
@@ -84,7 +84,7 @@ const Home = () => {
     const JapanViewport = {
       latitude: 36.332465,
       longitude: 139.748212,
-      zoom: 3,
+      zoom: 4,
       height: '100vh',
       width: '100vw'
     }
@@ -102,11 +102,11 @@ const Home = () => {
       onViewportChange={(viewPort) => setViewPort(viewPort)}
     >
       <div className="map-menu">
-        <button onClick={goToWorld}>WORLD</button>
-        <button onClick={goToNorthAmerica}>North America</button>
-        <button onClick={goToEurope}>Europe</button>
-        <button onClick={goToAusNZ}>AUS/NZ</button>
-        <button onClick={goToJapan}>Japan</button>
+        <button  type="button" className="btn btn-dark button" onClick={goToWorld}>WORLD</button>
+        <button type="button" className="btn btn-dark button" onClick={goToNorthAmerica}>North America</button>
+        <button type="button" className="btn btn-dark button" onClick={goToEurope}>Europe</button>
+        <button type="button" className="btn btn-dark button" onClick={goToAusNZ}>AUS/NZ</button>
+        <button type="button" className="btn btn-dark button" onClick={goToJapan}>Japan</button>
         
       </div>
       
