@@ -26,7 +26,7 @@ router.route('/login')
 router.route('/users')
   .get(userController.getUsers)
 
-router.route('/users/:username')
+router.route('/users/:accountId')
   .get(userController.singleUser)
   .delete(secureRoute, userController.removeUser)
   .put(secureRoute, userController.modifyUser)

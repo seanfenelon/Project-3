@@ -28,9 +28,9 @@ const App = () => (
       <Route exact path="/resorts" component={Resorts} />
       <Route exact path="/resorts/:name" component={SingleResort} />
       <Route exact path="/favourites" component={Favourites} />
-      <Route exact path="/users/:username" component={SingleAccount} />
-      <Route exact path="/users/edit/:username" component={UpdateAccount} />
-      <Route exact path="/users/:username/image" component={ImageUpload} />
+      <Route exact path="/users/:id" component={SingleAccount} />
+      <Route exact path="/users/edit/:id" component={UpdateAccount} />
+      <Route exact path="/users/:id/image" component={ImageUpload} />
 
     </Switch> 
   </BrowserRouter>

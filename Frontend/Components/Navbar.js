@@ -5,12 +5,12 @@ import Auth from '../lib/auth'
 
 const NavBar = (props) => {
 
-  const account = window.location.pathname
-  const accountSplit = account.split("/")
-  console.log(props)
-  console.log(account)
-  console.log(accountSplit)
-  console.log(accountSplit[2])
+  const token = localStorage.getItem('token')
+  if (token) {
+    const parsedToken = JSON.parse(atob(token.split('.')[1]))
+
+    var finalId = parsedToken.sub
+  }
 
   function handleLogout() {
     localStorage.removeItem('token')
@@ -48,9 +48,11 @@ const NavBar = (props) => {
           <Link to="/newresort" className="nav-link">New Resort</Link>
         </li>}
 
-        {localStorage.getItem('token') && <li className="nav-item">
-          <Link to={`/users/admin`} className="nav-link">My Account</Link>
+
+        {token && <li className="nav-item">
+          <Link to={`/users/${finalId}`} className="nav-link">My Account</Link>
         </li>}
+
 
         {/*{localStorage.getItem('token') && <li className="nav-item">
           <Link to={`/users/${accountSplit[2]}`} className="nav-link">My Account</Link>
@@ -62,7 +64,7 @@ const NavBar = (props) => {
           >Logout</Link>
         </li>}
 
-        
+
       </ul>
     </div>
 
@@ -72,5 +74,12 @@ const NavBar = (props) => {
 // console.log(window.location.pathname)
 // split string by /
 // pass thrtough in line 48
+
+// const account = window.location.pathname
+// const accountSplit = account.split("/")
+// console.log(props)
+// console.log(account)
+// console.log(accountSplit)
+// console.log(accountSplit[2])
 
 export default withRouter(NavBar)

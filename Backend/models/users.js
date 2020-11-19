@@ -10,7 +10,8 @@ const schema = new mongoose.Schema({
   password: { type: String, required: true },
   image: { type: String },
   isAdmin: { type: Boolean },
-  favourites: { type: Array }
+  favourites: { type: Array },
+  //_id: { type: String }
   
 })
 

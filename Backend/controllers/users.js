@@ -30,21 +30,39 @@ function createUser(req, res) {
 }
 
 function singleUser(req, res) {
-  const name = req.params.username
+  const accountId = req.params
+  const finalId = accountId.accountId
+  console.log(finalId)
   User
-    .findOne({ username: { $regex: name, $options: 'i' } })
+    .findById(finalId)
+    //.findById(accountId)
     .then(account => {
+      console.log(account)
+      console.log('123')
+
+      if (!account) return res.status(404).send({ message: 'User not found' })
       res.send(account)
+
     })
     .catch(error => res.send(error))
 }
 
+// function singleUser(req, res) {
+//   const name = req.params.username
+//   User
+//     .findOne({ username: { $regex: name, $options: 'i' } })
+//     .then(account => {
+//       res.send(account)
+//     })
+//     .catch(error => res.send(error))
+// }
+
 function removeUser(req, res) {
-  const name = req.params.username
+  const id = req.params._id
   const currentUser = req.currentUser
 
   User
-    .findOne({ username: { $regex: name, $options: 'i' } })
+
     .then(account => {
       if (!account._id.equals(currentUser._id) && !req.currentUser.isAdmin) {
         return res.status(401).send({ message: 'Unauthorised' })
@@ -56,13 +74,13 @@ function removeUser(req, res) {
 }
 
 function modifyUser(req, res) {
-  const name = req.params.username
+  const id = req.params._id
   const body = req.body
 
   const currentUser = req.currentUser
 
   User
-    .findOne({ username: { $regex: name, $options: 'i' } })
+    .findById(id)
     .then(account => {
       if (!account) return res.send({ message: 'No user by this name' })
       if (!account._id.equals(currentUser._id)) {

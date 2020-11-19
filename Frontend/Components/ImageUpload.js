@@ -20,7 +20,7 @@ const ImageUpload = (props) => {
         if (result.event !== 'success') {
           return
         }
-        axios.put(`/api/users/${props.match.params.username}`, { url: result.info.secure_url }, {
+        axios.put(`/api/users/${props.match.params._id}`, { url: result.info.secure_url }, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then((res) => updateImage(res.data))
