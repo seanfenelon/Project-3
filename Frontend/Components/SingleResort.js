@@ -220,7 +220,7 @@ const SingleResort = (props) => {
 
               <button
                 onClick={handleComment}
-                className="btn btn-primary btn-submit-comments"
+                className="btn btn-dark btn-submit-comments"
               >
                 Submit</button>
 

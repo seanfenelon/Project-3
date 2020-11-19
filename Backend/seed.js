@@ -64,7 +64,7 @@ mongoose.connect(
             slopeslength: '600km',
             adultticket: '€64.50,-',
             childticket: '€51.60,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -82,7 +82,7 @@ mongoose.connect(
             slopeslength: '300km',
             adultticket: '€62,-',
             childticket: '€50,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -100,7 +100,7 @@ mongoose.connect(
             slopeslength: '200km',
             adultticket: '€62,-',
             childticket: '€50,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -118,7 +118,7 @@ mongoose.connect(
             slopeslength: '600km',
             adultticket: '€64.50',
             childticket: '€51.60',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -136,7 +136,7 @@ mongoose.connect(
             slopeslength: '200km',
             adultticket: '€53,-',
             childticket: '€42.50,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -154,7 +154,7 @@ mongoose.connect(
             slopeslength: '200km',
             adultticket: '€55,-',
             childticket: '€44,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -172,7 +172,7 @@ mongoose.connect(
             slopeslength: '580km',
             adultticket: '€59,-',
             childticket: '€44,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -190,7 +190,7 @@ mongoose.connect(
             slopeslength: '181km',
             adultticket: '€59.50,-',
             childticket: '€29.50,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -208,7 +208,7 @@ mongoose.connect(
             slopeslength: '303km',
             adultticket: '€59,-',
             childticket: '€35,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -226,7 +226,7 @@ mongoose.connect(
             slopeslength: '89.8km',
             adultticket: '$199,-',
             childticket: '$80,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -244,7 +244,7 @@ mongoose.connect(
             slopeslength: '200km',
             adultticket: '$64.50,-',
             childticket: '$51.60,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -262,7 +262,7 @@ mongoose.connect(
             slopeslength: '10km',
             adultticket: 'NZ$ 129,-',
             childticket: 'NZ$ 69,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -280,7 +280,7 @@ mongoose.connect(
             slopeslength: '42km',
             adultticket: '¥ 6200',
             childticket: '¥ 3200',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -298,7 +298,7 @@ mongoose.connect(
             slopeslength: '116km',
             adultticket: 'US$ 175,-',
             childticket: 'US$ 105,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -316,7 +316,7 @@ mongoose.connect(
             slopeslength: '237km',
             adultticket: 'US$ 184',
             childticket: 'US$ 126',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -332,7 +332,7 @@ mongoose.connect(
             skilifts: '25',
             openingtimes: '08:30 - 16:00',
             slopeslength: '234km',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0,
             adultticket: 'US$ 219,-',
             childticket: 'US$ 151,-'
@@ -350,7 +350,7 @@ mongoose.connect(
             skilifts: '8',
             openingtimes: '09:15 - 16:30',
             slopeslength: '116km',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0,
             adultticket: 'US$ 125,-',
             childticket: 'US$ 65,-'
@@ -370,7 +370,7 @@ mongoose.connect(
             slopeslength: '55km',
             adultticket: 'C$ 129,-',
             childticket: 'C$ 46,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -388,7 +388,7 @@ mongoose.connect(
             slopeslength: '100km',
             adultticket: 'AU$ 64.50,-',
             childticket: 'AU$ 51.60,-',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           },
           {
@@ -406,7 +406,7 @@ mongoose.connect(
             slopeslength: '27.2km',
             adultticket: '$94.50',
             childticket: '$71.60',
-            userRating: 0,
+            userRating: 4,
             numOfRatings: 0
           }
         ])

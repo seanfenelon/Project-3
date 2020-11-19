@@ -81,7 +81,7 @@ const Login = (props) => {
         {errors.message}
       </p>}
 
-      <button className="btn btn-primary">Login</button>
+      <button className="btn btn-dark">Login</button>
 
     </form>
 
