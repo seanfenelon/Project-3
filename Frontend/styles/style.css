@@ -103,7 +103,8 @@ form input {
 
 .card-text {
   font-size: .7rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 3rem;
 }
 
@@ -252,8 +253,7 @@ form input {
   height: 12rem;
   position: relative;
   bottom: 0;
-  /* overflow: scroll;
-  overflow-x: hidden */
+  overflow-x: hidden
 }
 
 
