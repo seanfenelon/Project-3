@@ -124,7 +124,7 @@ const SingleResort = (props) => {
   }
 
   return <div className="background-image-single-resort">
-    <div className="container container-single">
+    <div className="container-single">
 
       <div className="card card-single">
 
