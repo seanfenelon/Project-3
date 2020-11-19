@@ -79,7 +79,7 @@ const SingleResort = (props) => {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(resp => {
-          
+
           console.log(resp.data)
           console.log('deleted')
 
@@ -101,8 +101,8 @@ const SingleResort = (props) => {
   }
 
   function handleNewRating(rating) {
-      
-    const totalRatings = singleResort.numOfRatings + 1
+
+    const totalRatings = (singleResort.numOfRatings + 1)
     const newAverage = (((singleResort.userRating) * singleResort.numOfRatings) + rating) / totalRatings
     const token = localStorage.getItem('token')
 
@@ -121,20 +121,20 @@ const SingleResort = (props) => {
       })
 
   }
- 
-  return <div className="container container-custom">
+
+  return <div className="container container-single">
 
     <div className="card card-single">
 
-      <div className="text-center">
+      <div className="text-center resort-single-info">
         <img className="card-img-top-single" src={`${singleResort.image}`} alt="Card image cap"></img>
-        <p className="resort-single-side"><strong>Opening times:</strong><br />{singleResort.openingtimes}</p>
-        <p className="resort-single-side"><strong>Adult ticket:</strong><br />{singleResort.adultticket}</p>
-        <p className="resort-single-side"><strong>Child ticket:</strong><br />{singleResort.childticket}</p>
-        <p className="resort-single-side"><strong>Slope length:</strong><br />{singleResort.slopeslength}</p>
-        <p className="resort-single-side"><strong>Ski lifts:</strong><br />{singleResort.skilifts}</p>
-        <p className="resort-single-side"><strong>Top elevation:</strong><br />{singleResort.top_elevation}</p>
-        <p className="resort-single-side"><strong>Bottom elevation:</strong><br />{singleResort.bottom_elevation}</p>
+        <p className="resort-single-side"><strong >Opening times</strong><br />{singleResort.openingtimes}</p>
+        <p className="resort-single-side"><strong>Adult ticket</strong><br />{singleResort.adultticket}</p>
+        <p className="resort-single-side"><strong>Child ticket</strong><br />{singleResort.childticket}</p>
+        <p className="resort-single-side"><strong>Slope length</strong><br />{singleResort.slopeslength}</p>
+        <p className="resort-single-side"><strong>Ski lifts</strong><br />{singleResort.skilifts}</p>
+        <p className="resort-single-side"><strong>Top elevation</strong><br />{singleResort.top_elevation}m above sea level</p>
+        <p className="resort-single-side"><strong>Bottom elevation</strong><br />{singleResort.bottom_elevation}m above sea level</p>
       </div>
 
       <div className="card-body">
@@ -144,6 +144,25 @@ const SingleResort = (props) => {
 
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
+          <div className="rating">
+            <span id="rateMe1"></span>
+          </div>
+          <div className="rating">
+            <Rating
+              name="hover-feedback"
+              value={rating}
+              precision={0.5}
+              onChange={(event, newRating) => {
+                updateRating(newRating)
+                handleNewRating(newRating)
+
+              }}
+            // onChangeActive={(event, newHover) => {
+            //   setHover(newHover)
+            // }}
+            />
+            {/* {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>} */}
+          </div>
           <p className="card-text card-text-single">{singleResort.description}</p>
           <h6>Current temperature: {(weather.current.temp - 273) | 0}°C {weather.current.weather[0].description}</h6>
           <div className="container">
@@ -156,25 +175,7 @@ const SingleResort = (props) => {
         </div>
 
 
-        <div className="rating">
-          <span id="rateMe1"></span>
-        </div>
-        <div className="rating">
-          <Rating
-            name="hover-feedback"
-            value={rating}
-            precision={0.5}
-            onChange={(event, newRating) => {
-              updateRating(newRating)
-              handleNewRating(newRating)
 
-            }}
-            // onChangeActive={(event, newHover) => {
-            //   setHover(newHover)
-            // }}
-          />
-          {/* {rating !== null && <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>} */}
-        </div>
 
 
         <div className="comments-box">
