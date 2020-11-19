@@ -47,18 +47,18 @@ const UpdateAccount = (props) => {
     event.preventDefault()
 
     const token = localStorage.getItem('token')
-    axios.put(`/api/users/${props.match.params._id}`, formData, {
+    axios.put(`/api/users/${props.match.params.id}`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
         console.log(res.data)
-        props.history.push(`/user/${props.match.params._id}`)
+        props.history.push(`/users/${props.match.params.id}`)
       })
 
   }
 
   function handleDelete() {
-    axios.delete(`/api/users/${props.match.params._id}`, {
+    axios.delete(`/api/users/${props.match.params.id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {
@@ -83,7 +83,7 @@ const UpdateAccount = (props) => {
         if (result.event !== 'success') {
           return
         }
-        axios.put(`/api/users/${props.match.params._id}`, { image: result.info.secure_url }, {
+        axios.put(`/api/users/${props.match.params.id}`, { image: result.info.secure_url }, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then((res) => updateFormData(res.data))
@@ -104,7 +104,7 @@ const UpdateAccount = (props) => {
           value={formData.image}
           onClick={handleImageUpload}
           name="image"
-        >Upload
+        >Upload Image
         </button>
       </div>
 

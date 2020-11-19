@@ -25,6 +25,9 @@ mongoose.connect(
             passwordConfirmation: 'admin',
             image: 'https://i.imgur.com/4f1MbGO.png?1',
             isAdmin: true,
+            firstname: 'Top',
+            lastname: 'Skier',
+            bio: 'This is my bio section. I love to ski and get on it with the lads...',
             favourites: []
 
           },
@@ -35,6 +38,8 @@ mongoose.connect(
             passwordConfirmation: 'test',
             image: 'https://i.imgur.com/ioS25on.jpg',
             isAdmin: false,
+            firstname: 'Test',
+            lastname: 'Snowboader',
             favourites: []
 
           }
@@ -408,7 +413,50 @@ mongoose.connect(
             childticket: '$71.60',
             userRating: 4,
             numOfRatings: 0
+          },
+
+          {
+            name: 'Niseko United',
+            country: 'Japan',
+            top_elevation: 1188,
+            bottom_elevation: 255,
+            lon: 140.6479,
+            lat: 42.8489,
+            image: 'https://i.imgur.com/6VNfsVe.jpg',
+            user: users[0],
+            description: 'The ski resort Niseko United – Annupuri/​Grand Hirafu/​Hanazono/​Niseko Village is located on Hokkaido (Japan). For skiing and snowboarding, there are 50.8 km of slopes available. 32 lifts transport the guests. The winter sports area is situated between the elevations of 255 and 1,188 m.',
+            skilifts: '32',
+            openingtimes: '08:30 - 20:30',
+            slopeslength: '50.8km',
+            adultticket: '¥ 8000,-',
+            childticket: '¥ 6400,-',
+            userRating: 4,
+            numOfRatings: 0
+          },
+
+          {
+            name: 'Niseko United',
+            country: 'Japan',
+            top_elevation: 1188,
+            bottom_elevation: 255,
+            lon: 140.6479,
+            lat: 42.8489,
+            image: 'https://i.imgur.com/6VNfsVe.jpg',
+            user: users[0],
+            description: 'The ski resort Niseko United – Annupuri/​Grand Hirafu/​Hanazono/​Niseko Village is located on Hokkaido (Japan). For skiing and snowboarding, there are 50.8 km of slopes available. 32 lifts transport the guests. The winter sports area is situated between the elevations of 255 and 1,188 m.',
+            skilifts: '32',
+            openingtimes: '08:30 - 20:30',
+            slopeslength: '50.8km',
+            adultticket: '¥ 8000,-',
+            childticket: '¥ 6400,-',
+            userRating: 4,
+            numOfRatings: 0
           }
+         
+          
+
+
+
         ])
       })
 

@@ -58,11 +58,12 @@ function singleUser(req, res) {
 // }
 
 function removeUser(req, res) {
-  const id = req.params._id
+  const accountId = req.params
+  const finalId = accountId.accountId
   const currentUser = req.currentUser
 
   User
-
+    .findById(finalId)
     .then(account => {
       if (!account._id.equals(currentUser._id) && !req.currentUser.isAdmin) {
         return res.status(401).send({ message: 'Unauthorised' })
@@ -74,13 +75,14 @@ function removeUser(req, res) {
 }
 
 function modifyUser(req, res) {
-  const id = req.params._id
+  const accountId = req.params
+  const finalId = accountId.accountId
   const body = req.body
 
   const currentUser = req.currentUser
 
   User
-    .findById(id)
+    .findById(finalId)
     .then(account => {
       if (!account) return res.send({ message: 'No user by this name' })
       if (!account._id.equals(currentUser._id)) {
