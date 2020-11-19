@@ -3,8 +3,8 @@ const axios = require('axios')
 const User = require('../models/users')
 
 
-function singleProxyResort(req, res) {
-}
+// function singleProxyResort(req, res) {
+// }
 
 function getResorts(req, res) {
 
@@ -34,7 +34,7 @@ function singleResort(req, res) {
   const name = req.params.name
 
   Resorts.
-    findOne({ name: name })
+    findOne({ name: { $regex: name, $options: 'i' } } )
     .populate('comments.user')
     .then(resort => {
       axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${resort.lat}&lon=${resort.lon}&exclude=hourly,minutely&appid=b12529b2552a67b6714b256d3318424c`)
@@ -47,10 +47,14 @@ function singleResort(req, res) {
 
 
     })
-    .catch(error => {
-      console.log(error)
-      res.send(error)
-    })
+    // .then(resort => {
+    //     res.send(resort)
+    //   })
+ 
+  // .catch(error => {
+  //   console.log(error)
+  //   res.send(error)
+  // })
 
 }
 
@@ -65,18 +69,28 @@ function singleResort(req, res) {
 //    })
 // }
 
-// function editResort(req, res) {
-//   const name = req.params.name
-//   const body = req.body
+function editResort(req, res) {
+  const name = req.params.name
+  const body = req.body
+  
+  Resorts
+    .findOne( { name: { $regex: name, $options: 'i' } } )
+    .then(resort => {
+      console.log(body)
+      console.log(resort)
+      if (!resort) return res.send({ message: 'No resort' })
+      resort.set(body)
+      return resort.save()
 
-//   Resorts
-//    .then(resort => {
-//      if (!resort) return res.send({ message: 'No team' })
-//      resort.set(body)
-//      resort.save()
-//      res.send(resort)
-//    })
-// }
+      
+     
+      
+    })
+    .then(resort => {
+      res.send(resort)
+    })
+    .catch(error => res.send(error))
+}
 
 function createComment(req, res) {
 
@@ -181,12 +195,12 @@ function deleteComment(req, res) {
 
 
 module.exports = {
-  singleProxyResort,
+  // singleProxyResort,
   getResorts,
   addResort,
   singleResort,
   // removeResort,
-  // editResort,
+  editResort,
   createComment,
   editComment,
   deleteComment

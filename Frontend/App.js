@@ -18,6 +18,7 @@ import SingleAccount from './components/SingleAccount'
 import UpdateAccount from './components/UpdateAccount'
 import ImageUpload from './components/ImageUpload'
 
+
 const App = () => (
   <BrowserRouter>
     <Navbar />
