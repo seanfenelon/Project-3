@@ -35,6 +35,11 @@ router.route('/resorts/:resortId/comments')
 router.route('/resorts/:name/comments')
   .post(secureRoute, resortsController.createComment)
 
+router.route('/resorts/:name/favourite')
+  .post(secureRoute, userController.addToFavourites)
+router.route('/resorts/:name/favourite/:favouritename')
+  .put(secureRoute, userController.deleteFromFavourites)
+
 router.route('/resorts/:name/comments/:commentId')
   .put(secureRoute, resortsController.editComment)
   .delete(secureRoute, resortsController.deleteComment)

@@ -7,16 +7,37 @@ import Box from '@material-ui/core/Box'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const SingleResort = (props) => {
-
+  const [favouriteToggle, updateFavouriteToggle] = useState(false)
   const token = localStorage.getItem('token')
   const [singleResort, updateSingleResort] = useState({})
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
+<<<<<<< HEAD
   const [rating, updateRating] = useState(0)
+=======
+  const star = <FontAwesomeIcon icon={faStar} size="3x" />
 
+  const favourite = singleResort.name
+
+
+  const [isActive, setActive] = useState(false)
+
+  const toggleClass = () => {
+    setActive(!isActive)
+  }
+
+>>>>>>> development
+
+
+
+
+
+
+  console.log(text)
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
       .then((axiosResponse) => {
@@ -35,6 +56,40 @@ const SingleResort = (props) => {
         setText('')
         updateSingleResort(resp.data)
       })
+  }
+
+  function addFavourite() {
+    toggleClass()
+
+    if (!favouriteToggle) {
+      axios.post(`/api/resorts/${singleResort.name}/favourite`, { favourite }, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(resp => {
+
+          console.log(resp.data)
+          console.log('added')
+
+        })
+      updateFavouriteToggle(true)
+
+
+    } else if (favouriteToggle) {
+      console.log('deletion')
+      console.log(token)
+
+      axios.put(`/api/resorts/${singleResort.name}/favourite/${favourite}`, { favourite }, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(resp => {
+          
+          console.log(resp.data)
+          console.log('deleted')
+
+        })
+
+      updateFavouriteToggle(false)
+    }
   }
 
 
@@ -73,15 +128,19 @@ const SingleResort = (props) => {
   return <div className="container container-custom">
 
     <div className="card card-single">
+
       <div className="text-center">
-        <img className="card-img-top-single" src={`${singleResort.image}`}  alt="Card image cap"></img>
-        <p><strong>Top Elevationsss:</strong> {singleResort.top_elevation}</p>
+        <img className="card-img-top-single" src={`${singleResort.image}`} alt="Card image cap"></img>
+        <p><strong>Top Elevation:</strong> {singleResort.top_elevation}</p>
         <p><strong>Bottom Elevation:</strong> {singleResort.bottom_elevation}</p>
 
       </div>
 
       <div className="card-body">
         <div className="resort-info-upper">
+
+          {token && <button className={isActive ? 'star-active' : 'star'} onClick={addFavourite} >{star}</button>}
+
           <h1 className="card-title">{singleResort.name}</h1>
           <h6>{singleResort.country}</h6>
           <p className="card-text card-text-single">{singleResort.description}</p>
@@ -121,7 +180,7 @@ const SingleResort = (props) => {
           <h5>Comments</h5>
 
           <div className="comments">
-            
+
             {singleResort.comments && singleResort.comments.map(comment => {
 
               return <div key={comment._id} className="row comments-spaced text-center">
@@ -170,7 +229,7 @@ const SingleResort = (props) => {
       </div>
 
     </div>
-  </div>
+  </div >
 
 }
 

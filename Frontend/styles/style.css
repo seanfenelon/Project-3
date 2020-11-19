@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.container-single{
+.container-single {
   /* height: 100vh; */
   align-items: center;
   justify-content: center;
@@ -36,6 +36,10 @@
   font-size: 10px;
 }
 
+.marker {
+  cursor: pointer!important;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -44,7 +48,9 @@
   font-size: .9rem;
   letter-spacing: .1rem;
 }
-
+.nav-background {
+  background-color: rgb(52, 58, 64, 0.8)!important;
+}
 .fixed-top {
   backface-visibility: hidden;
   z-index: 999 !important;
@@ -110,15 +116,15 @@ form input {
 
 /* ACCOUNT PAGE */
 
-#long-card {
+#a-card {
   width: 18rem;
-  height: 25rem;
+  height: 22rem;
   margin: .7rem;
 }
 
 #wide-card {
-  width: 54rem;
-  height: 15rem;
+  width: 50rem;
+  height: 22rem;
   margin: .7rem;
 }
 
@@ -139,11 +145,48 @@ font-size: .8rem!important;
 
 /* SINGLE RESORT */
 
+.star {
+  color: gold;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border-style: none;
+  transition: .3s
+}
+
+.star:hover {
+  color: gold;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border-style: none;
+}
+
+.star:focus, .star-active:focus {
+  outline: none;
+}
+
+.star-active {
+  color: gold;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border-style: none;
+}
+
+
+
 .card-single {
   display: flex;
   flex-direction: row !important;
   width: 70%;
-  position: relative;
+  /* position: relative; */
   top: 7rem;
   height: 34rem;
 }
@@ -157,7 +200,7 @@ font-size: .8rem!important;
 .resort-info-upper {
   font-size: .7rem;
   overflow: scroll;
-
+  position: relative;
   width: 30rem;
   margin-left: 1rem;
 }
@@ -198,7 +241,7 @@ font-size: .8rem!important;
   word-wrap: break-word;
   width: 15rem;
   font-size: .7rem;
-  
+
 }
 
 .comments {
@@ -213,21 +256,21 @@ font-size: .8rem!important;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .comment-user {
   color: red;
   font-size: .7rem;
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 textarea {
   font-size: 1rem;
   margin-right: 1rem !important;
-  padding: .3rem!important;
+  padding: .3rem !important;
   height: 1rem;
   resize: none !important;
 }
@@ -253,7 +296,7 @@ textarea:focus,
 }
 
 .btn-submit-comments {
-  font-size: .8rem!important;
+  font-size: .8rem !important;
 }
 
 /* COMMENTS */

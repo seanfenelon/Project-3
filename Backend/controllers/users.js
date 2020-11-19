@@ -3,12 +3,13 @@ const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 const axios = require('axios')
 const { Template } = require('webpack')
+const { faVrCardboard } = require('@fortawesome/free-solid-svg-icons')
 
 
 function getUsers(req, res) {
   User
     .find()
-    .populate('user')
+    .populate('user.favourites')
     .then(userList => {
       res.send(userList)
     })
@@ -68,6 +69,7 @@ function modifyUser(req, res) {
         return res.status(401).send({ message: 'Unauthorised' })
       }
       account.set(body)
+      console.log(body)
       //account.save()
       //res.send(account)
       return account.save()
@@ -87,7 +89,7 @@ function logInUser(req, res) {
 
         return
       }
-      
+
       if (!user.validatePassword(req.body.password)) {
         res.send({ message: 'Incorrect password' })
 
@@ -107,11 +109,101 @@ function logInUser(req, res) {
 
 }
 
+function addToFavourites(req, res) {
+
+  const favourite = req.body
+  console.log(favourite)
+
+  const name = req.currentUser._id
+
+  User
+    .findById(name)
+
+    .then(user => {
+      console.log('555')
+
+      if (!user) return res.status(404).send({ message: 'User not found' })
+
+      console.log(user)
+
+
+      const internalfavourite = favourite.favourite
+
+      const containsFavourite = user.favourites.includes(internalfavourite)
+
+      if (containsFavourite) {
+        return console.log('already here')
+
+      } else if (!containsFavourite) {
+        user.favourites.push(favourite.favourite)
+      }
+
+
+      console.log(containsFavourite)
+      console.log(internalfavourite)
+      return user.save()
+    })
+
+    .then(user => res.send(user))
+    .catch(err => res.send(err))
+}
+
+function deleteFromFavourites(req, res) {
+
+  const favourite = req.params.favouritename
+  console.log(favourite)
+
+  const name = req.currentUser._id
+
+  User
+    .findById(name)
+
+    .then(user => {
+
+      if (!user) return res.status(404).send({ message: 'User not found' })
+
+      const newfilter = []
+
+      for (i = 0; i < user.favourites.length; i++) {
+        const item = user.favourites
+
+        if (item[i] === favourite) {
+          console.log('same')
+
+        } else if (item[i] !== favourite) {
+          console.log('not same')
+          newfilter.push(user.favourites[i])
+
+        } else {
+          console.log('nothing')
+        }
+
+      }
+
+      console.log(user.favourites)
+
+      const favourites = user.favourites
+
+      favourites.splice(0, favourites.length)
+
+      newfilter.forEach((favourite) => {
+        favourites.push(favourite)
+      })
+
+      return user.save()
+    })
+
+    .then(user => res.send(user))
+    .catch(err => res.send(err))
+}
+
 module.exports = {
   createUser,
   logInUser,
   getUsers,
   singleUser,
   removeUser,
-  modifyUser
+  modifyUser,
+  addToFavourites,
+  deleteFromFavourites
 }

@@ -1,15 +1,23 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import Auth from '../lib/auth'
 
 
 const NavBar = (props) => {
+
+  const account = window.location.pathname
+  const accountSplit = account.split("/")
+  console.log(props)
+  console.log(account)
+  console.log(accountSplit)
+  console.log(accountSplit[2])
 
   function handleLogout() {
     localStorage.removeItem('token')
     props.history.push('/resort')
   }
 
-  return <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  return <nav className="navbar navbar-expand-md navbar-dark nav-background fixed-top">
 
     <Link to="/" className="navbar-brand nav-brand">Ski Resorts</Link>
 
@@ -20,7 +28,7 @@ const NavBar = (props) => {
     <div className="collapse navbar-collapse text-right" id="navbarResponsive">
       <ul className="navbar-nav ml-auto">
 
-      <li className="nav-item">
+        <li className="nav-item">
           <Link to="/" className="nav-link">Home</Link>
         </li>
 
@@ -41,8 +49,12 @@ const NavBar = (props) => {
         </li>}
 
         {localStorage.getItem('token') && <li className="nav-item">
-          <Link to={`/users/${props.match.params.username}`} className="nav-link">My Account</Link>
+          <Link to={`/users/admin`} className="nav-link">My Account</Link>
         </li>}
+
+        {/*{localStorage.getItem('token') && <li className="nav-item">
+          <Link to={`/users/${accountSplit[2]}`} className="nav-link">My Account</Link>
+        </li>}*/}
 
         {localStorage.getItem('token') && <li className="nav-item">
           <Link to="/" className="nav-link nav-contact"
@@ -57,7 +69,8 @@ const NavBar = (props) => {
   </nav>
 
 }
-
-
+// console.log(window.location.pathname)
+// split string by /
+// pass thrtough in line 48
 
 export default withRouter(NavBar)

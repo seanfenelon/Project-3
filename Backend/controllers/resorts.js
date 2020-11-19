@@ -1,5 +1,7 @@
 const Resorts = require('../models/resorts')
 const axios = require('axios')
+const User = require('../models/users')
+
 
 // function singleProxyResort(req, res) {
 // }
@@ -37,10 +39,19 @@ function singleResort(req, res) {
     .then(resort => {
       axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${resort.lat}&lon=${resort.lon}&exclude=hourly,minutely&appid=b12529b2552a67b6714b256d3318424c`)
         .then(resp => {
+<<<<<<< HEAD
           res.send({ resort: resort, weather: resp.data })
         })
   
       
+=======
+
+
+          res.send({ resort: resort, weather: resp.data })
+        })
+
+
+>>>>>>> development
 
     })
     // .then(resort => {
@@ -56,7 +67,7 @@ function singleResort(req, res) {
 
 // function removeResort(req, res) {
 //   const name = req.params.name
-  
+
 //   Resorts
 //    .findOne({ name: { regex: name, $options: 'i' } })
 //    .then(resort => {
@@ -108,7 +119,7 @@ function createComment(req, res) {
       if (!resort) return res.status(404).send({ message: 'Resort not found' })
 
       resort.comments.push(comment)
-
+      console.log(comment)
       return resort.save()
     })
 
@@ -136,7 +147,7 @@ function editComment(req, res) {
       }
 
       comment.set(req.body)
- 
+
       return resort.save()
     })
 
@@ -174,6 +185,22 @@ function deleteComment(req, res) {
     .catch(err => res.send(err))
 }
 
+
+
+// function createUser(req, res) {
+//   const body = req.body
+//   console.log(body)
+//   User
+//     .create(body)
+//     .then(user => {
+//       console.log(user)
+//       console.log('here')
+//       res.send(user)
+//     })
+//     .catch(error => res.send(error))
+// }
+
+
 module.exports = {
   // singleProxyResort,
   getResorts,
@@ -184,4 +211,5 @@ module.exports = {
   createComment,
   editComment,
   deleteComment
+
 }
