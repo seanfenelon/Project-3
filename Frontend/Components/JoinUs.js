@@ -117,7 +117,7 @@ const JoinUs = (props) => {
           </p>}
         </div>
 
-        <button className="btn btn-primary">Submit</button>
+        <button className="btn btn-dark">Submit</button>
 
       </form>
 

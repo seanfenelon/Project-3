@@ -35,7 +35,7 @@ const Resorts = () => {
             <p className="card-text-all-resorts">{resort.description}</p>
             {/* <p className="dot-dot">...</p> */}
 
-            <Link to={`/resorts/${resort.name}`} className="btn btn-primary btn-resort">View Resort</Link>
+            <Link to={`/resorts/${resort.name}`} className="btn btn-dark btn-resort">View Resort</Link>
           </div>
         </div>
 
