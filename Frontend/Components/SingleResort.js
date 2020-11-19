@@ -16,9 +16,7 @@ const SingleResort = (props) => {
   const [weather, updateWeather] = useState({ current: { weather: [{}] }, daily: [] })
   const [text, setText] = useState('')
   const trash = <FontAwesomeIcon icon={faTrash} size="1x" />
-<<<<<<< HEAD
   const [rating, updateRating] = useState(0)
-=======
   const star = <FontAwesomeIcon icon={faStar} size="3x" />
 
   const favourite = singleResort.name
@@ -30,7 +28,6 @@ const SingleResort = (props) => {
     setActive(!isActive)
   }
 
->>>>>>> development
 
 
 
