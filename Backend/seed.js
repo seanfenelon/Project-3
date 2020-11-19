@@ -58,7 +58,7 @@ mongoose.connect(
             lat: 45.29806,
             image: 'https://i.imgur.com/LumFgEX.jpg',
             user: users[0],
-            description: 'With the access of the Three Valleys, Val Thorens have one of the largest skiing area in the world!',
+            description: 'With the access of the Three Valleys, Val Thorens have one of the largest skiing area in the world! Beginner, intermidates and experts will all find a challenge here!',
             skilifts: '137',
             openingtimes: '08:30 - 16:30',
             slopeslength: '600km',

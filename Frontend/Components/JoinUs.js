@@ -56,70 +56,72 @@ const JoinUs = (props) => {
 
   console.log(formData)
 
-  return <div className="container container-custom">
+  return <div className="background-image-joinus">
+    <div className="container container-custom">
 
-    <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
 
-      <div className="form-group">
-        <input
-          className="form-control"
-          placeholder="Username"
-          type="text"
-          onChange={handleChange}
-          value={formData.username}
-          name="username"
-        />
-        {errors.username && <p id="error" style={{ color: 'red' }}>
-          {`There was a problem with your ${errors.username.path}`}
-        </p>}
-      </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Username"
+            type="text"
+            onChange={handleChange}
+            value={formData.username}
+            name="username"
+          />
+          {errors.username && <p id="error" style={{ color: 'red' }}>
+            {`There was a problem with your ${errors.username.path}`}
+          </p>}
+        </div>
 
-      <div className="form-group">
-        <input
-          className="form-control"
-          placeholder="Email"
-          type="text"
-          onChange={handleChange}
-          value={formData.email}
-          name="email"
-        />
-        {errors.email && <p id="error" style={{ color: 'red' }}>
-          {`There was a problem with your ${errors.email.path}`}
-        </p>}
-      </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Email"
+            type="text"
+            onChange={handleChange}
+            value={formData.email}
+            name="email"
+          />
+          {errors.email && <p id="error" style={{ color: 'red' }}>
+            {`There was a problem with your ${errors.email.path}`}
+          </p>}
+        </div>
 
-      <div className="form-group">
-        <input
-          className="form-control"
-          placeholder="Password"
-          type="Password"
-          onChange={handleChange}
-          value={formData.password}
-          name="password"
-        />
-        {errors.password && <p id="error" style={{ color: 'red' }}>
-          {`There was a problem with your ${errors.password.path}`}
-        </p>}
-      </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Password"
+            type="Password"
+            onChange={handleChange}
+            value={formData.password}
+            name="password"
+          />
+          {errors.password && <p id="error" style={{ color: 'red' }}>
+            {`There was a problem with your ${errors.password.path}`}
+          </p>}
+        </div>
 
-      <div className="form-group">
-        <input
-          className="form-control"
-          placeholder="Confirm Password"
-          type="password"
-          onChange={handleChange}
-          value={formData.passwordConfirmation}
-          name="passwordConfirmation"
-        />
-        {errors.passwordConfirmation && <p id="error" style={{ color: 'red' }}>
-          {'Does not match password'}
-        </p>}
-      </div>
+        <div className="form-group">
+          <input
+            className="form-control"
+            placeholder="Confirm Password"
+            type="password"
+            onChange={handleChange}
+            value={formData.passwordConfirmation}
+            name="passwordConfirmation"
+          />
+          {errors.passwordConfirmation && <p id="error" style={{ color: 'red' }}>
+            {'Does not match password'}
+          </p>}
+        </div>
 
-      <button className="btn btn-primary">Submit</button>
+        <button className="btn btn-primary">Submit</button>
 
-    </form>
+      </form>
 
+    </div>
   </div>
 
 }
