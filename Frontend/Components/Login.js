@@ -43,7 +43,9 @@ const Login = (props) => {
   // console.log(formData)
   console.log(errors)
 
-  return <div className="container container-custom">
+  return <div className="background-image-login">
+    
+    <div className="container container-custom">
 
     <form onSubmit={handleSubmit}>
 
@@ -79,11 +81,12 @@ const Login = (props) => {
         {errors.message}
       </p>}
 
-      <button className="btn btn-primary">Login</button>
+      <button className="btn btn-dark">Login</button>
 
     </form>
 
   </div>
+    </div>
 
 }
 

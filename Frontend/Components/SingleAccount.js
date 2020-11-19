@@ -58,22 +58,32 @@ const SingleAccount = (props) => {
       </div>
       <div className="card-body">
 
-        {formData && favourites.map((property, index) => {
+          {formData && favourites.map((property, index) => {
 
-          return <div key={index}>
+            return <div key={index}>
 
-            <Link to={`/resorts/${property}`}>{property}</Link>
+              <Link to={`/resorts/${property}`}>{property}</Link>
 
-          </div>
+            </div>
 
+<<<<<<< HEAD
         })}
+=======
+          })}
+
+          <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" className="btn btn-primary">Go somewhere</a>
+        </div>
+>>>>>>> Development
       </div>
+
+<<<<<<< HEAD
+
+
+=======
     </div>
-
-
-
+>>>>>>> Development
   </div>
-
 }
 
 export default SingleAccount

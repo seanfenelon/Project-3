@@ -13,16 +13,44 @@
 }
 
 .container-single {
-  /* height: 100vh; */
+  height: 100vh;
+  overflow-y: scroll;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
-
-.container-resorts {
+.background-image-login {
+  background-image: url('https://i.imgur.com/EonHcnD.jpg');
+  background-size: cover;
+}
+.background-image-joinus {
+  background-image: url('https://i.imgur.com/zqD1UIV.jpg');
+  background-size: cover;
+}
+.background-image-single-resort {
+  background-image: url('https://i.imgur.com/cUkydzz.jpg');
+  background-size: cover;
   height: 100vh;
+}
+.background-image-single-account {
+  background-image: url('https://i.imgur.com/Vvbw7gK.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+.background-image-resorts {
+  background-color: rgb(252, 252, 252);
+  /* background-size: cover; */
+  margin: 0;
+  padding: 0;
+  
+}
+.single-account {
+  /* opacity: 0.8; */
+}
+.container-resorts {
+  /* height: 100vh; */
   top: 7rem;
   flex-wrap: wrap;
   display: flex;
@@ -30,6 +58,10 @@
   flex-direction: row;
   padding-left: 5px !important;
   padding-right: 5px !important;
+  padding-top: 10px;
+  position: relative;
+  top: 7rem;
+  background-color: rgb(252, 252, 252);
 }
 
 #error {
@@ -103,12 +135,23 @@ form input {
 
 .card-text {
   font-size: .7rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 3rem;
+  /* overflow-y: scroll; */
+  overflow-x: hidden !important;
+  height: inherit;
 }
 
-
+.card-text-all-resorts {
+  font-size: .7rem;
+  overflow-y: scroll;
+  overflow-x: hidden !important;
+  height: 3rem;
+  /* display: inline; */
+}
+.dot-dot {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
 /* HOME PAGE */
 
 .map-menu {
@@ -193,6 +236,7 @@ form input {
   width: 50rem;
   top: 7rem;
   height: inherit;
+  opacity: 0.8;
 }
 
 .card-img-top-single {
@@ -216,10 +260,13 @@ form input {
   position: relative;
   width: 30rem;
   margin-left: 1rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .card-text-single {
-  height: 5rem;
+  height: inherit important;
+
 }
 
 .weather-days {
@@ -265,7 +312,8 @@ form input {
 }
 
 .comments {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
   height: 7rem;
 }
@@ -317,6 +365,12 @@ textarea:focus,
 
 .btn-submit-comments {
   font-size: .8rem !important;
+}
+
+.button {
+  margin: 2px;
+  opacity: 0.5;
+  /* text-emphasis-style: ; */
 }
 
 /* COMMENTS */
