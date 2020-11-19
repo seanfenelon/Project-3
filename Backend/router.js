@@ -15,7 +15,7 @@ router.route('/resorts')
 router.route('/resorts/:name')
   .get(resortsController.singleResort)
 //   .delete(secureRoute, resortsController.removeResort)
-//   .put(secureRoute, resortsController.editResort)
+  .put(secureRoute, resortsController.editResort)
 
 router.route('/joinus')
   .post(userController.createUser)

@@ -5,7 +5,7 @@ const commentSchema = new mongoose.Schema({
 
   text: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-  
+
 }, {
   timestamps: true
 })
@@ -18,9 +18,16 @@ const resortsSchema = new mongoose.Schema({
   lon: { type: Number, required: true },
   lat: { type: Number, required: true },
   image: { type: String, required: true },
-  comments: [ commentSchema ],
+  comments: [commentSchema],
   description: { type: String },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  skilifts: { type: String },
+  openingtimes: { type: String },
+  slopeslength: { type: String },
+  adultticket: { type: String },
+  childticket: { type: String },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  userRating: { type: Number, required: true },
+  numOfRatings: { type: Number, required: true }
 })
 
 
