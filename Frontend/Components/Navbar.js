@@ -44,9 +44,9 @@ const NavBar = (props) => {
           <Link to="/resorts" className="nav-link">Resorts</Link>
         </li>
 
-        {localStorage.getItem('token') && <li className="nav-item">
+        {/* {localStorage.getItem('token') && <li className="nav-item">
           <Link to="/newresort" className="nav-link">New Resort</Link>
-        </li>}
+        </li>} */}
 
 
         {token && <li className="nav-item">
