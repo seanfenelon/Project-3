@@ -1,14 +1,15 @@
 const path = require('path')
 const dist = path.join(__dirname, 'dist');
 const express = require('express')
-const Router = require('./Router')
+const Router = require('./router')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const expressServer = express()
+const dbURI = require('./config/environment')
 //hmm
 
 mongoose.connect(
-  'mongodb://localhost/resortsdb',
+  dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   (err) => {
     if (err) console.log(err)
