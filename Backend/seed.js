@@ -1,13 +1,12 @@
 const mongoose = require('mongoose')
-
 const Resorts = require('./models/resorts')
 const User = require('./models/users')
-
+const dbURI = require('../config/environment')
 const axios = require('axios')
 
 mongoose.connect(
+  dbURI,
 
-  'mongodb://localhost/resortsdb',
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   (err) => {
 

@@ -1,3 +1,5 @@
+const path = require('path')
+const dist = path.join(__dirname, 'dist');
 const express = require('express')
 const Router = require('./Router')
 const bodyParser = require('body-parser')
@@ -22,5 +24,9 @@ expressServer.use((req, res, next) => {
 expressServer.use(bodyParser.json())
 
 expressServer.use('/api', Router)
+expressServer.use('/', express.static(dist));
 
+expressServer.get('*', function(req, res) {
+  res.sendFile(path.join(dist, 'index.html'));
+});
 expressServer.listen(8000)
