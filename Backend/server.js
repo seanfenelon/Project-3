@@ -5,7 +5,7 @@ const Router = require('./router')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const expressServer = express()
-const { dbURI } = require('./config/environment')
+const { dbURI, port } = require('./config/environment')
 //hmm
 
 mongoose.connect(
@@ -30,4 +30,4 @@ expressServer.use('/', express.static(dist))
 expressServer.get('*', function(req, res) {
   res.sendFile(path.join(dist, 'index.html'))
 })
-expressServer.listen(8000)
+expressServer.listen(port)
