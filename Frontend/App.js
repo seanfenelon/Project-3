@@ -17,6 +17,7 @@ import SingleResort from './components/SingleResort'
 import SingleAccount from './components/SingleAccount'
 import UpdateAccount from './components/UpdateAccount'
 import ImageUpload from './components/ImageUpload'
+import UpdateAboutMe from './components/UpdateAboutMe'
 
 
 const App = () => (
@@ -31,6 +32,7 @@ const App = () => (
       <Route exact path="/favourites" component={Favourites} />
       <Route exact path="/users/:id" component={SingleAccount} />
       <Route exact path="/users/edit/:id" component={UpdateAccount} />
+      <Route exact path="/users/aboutme/:id" component={UpdateAboutMe} />      
       <Route exact path="/users/:id/image" component={ImageUpload} />
 
     </Switch> 

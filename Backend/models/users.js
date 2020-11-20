@@ -13,7 +13,12 @@ const schema = new mongoose.Schema({
   bio: { type: String},
   image: { type: String },
   isAdmin: { type: Boolean },
-  favourites: { type: Array }
+  favourites: { type: Array },
+  ski_or_board: { type: String},
+  favourite_region: { type: String},
+  hometown: { type: String},
+  experience: { type: String},
+  favourite_brand: { type: String}
   
 })
 

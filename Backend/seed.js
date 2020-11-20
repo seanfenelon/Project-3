@@ -28,7 +28,12 @@ mongoose.connect(
             firstname: 'Firstname',
             lastname: 'Lastname',
             bio: 'This is my bio section. A brief sentence about myself and my interests go here...',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           },
           {
@@ -41,7 +46,12 @@ mongoose.connect(
             firstname: 'Daniel',
             lastname: 'Tockan',
             bio: '26, software developer. Lovs to board!',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           },
           {
@@ -54,7 +64,12 @@ mongoose.connect(
             firstname: 'Kasjan',
             lastname: 'Hinc',
             bio: 'Fill this out Kas...',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           },
           {
@@ -67,7 +82,12 @@ mongoose.connect(
             firstname: 'Sean',
             lastname: 'Fenelon',
             bio: 'Fill this out Sean...',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           },
           {
@@ -80,7 +100,12 @@ mongoose.connect(
             firstname: 'Omar',
             lastname: 'Alawi',
             bio: 'Fill this out Omar...',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           },
           {
@@ -92,7 +117,12 @@ mongoose.connect(
             isAdmin: false,
             firstname: 'Test',
             lastname: 'Snowboader',
-            favourites: []
+            favourites: [],
+            ski_or_board: '',
+            favourite_region: '',
+            hometown: '',
+            experience: '',
+            favourite_brand: ''
 
           }
         ])
