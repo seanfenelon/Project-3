@@ -3,7 +3,7 @@ const router = express.Router()
 const resortsController = require('./controllers/resorts')
 const userController = require('./controllers/users')
 const secureRoute = require('./middleware/secureRoute')
-
+//tiny change
 router.route('/resorts')
   .get(resortsController.getResorts)
 
