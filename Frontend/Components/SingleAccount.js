@@ -25,7 +25,7 @@ const SingleAccount = (props) => {
   console.log(props)
   console.log(favourites)
 
-  return <div className="background-image-single-account"> <div className="container container-resorts single-account">
+  return <div className="background-image-single-account"> <div className="container container-account single-account">
     <div className="card border-primary" id="wide-card">
       <div className="text-light card-header border-primary bg-dark">
         About me
