@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Resorts = require('./models/resorts')
 const User = require('./models/users')
-const dbURI = require('./config/environment')
+const { dbURI } = require('./config/environment')
 const axios = require('axios')
 
 mongoose.connect(
