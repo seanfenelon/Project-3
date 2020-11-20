@@ -69,6 +69,7 @@ const JoinUs = (props) => {
             onChange={handleChange}
             value={formData.username}
             name="username"
+            required
           />
           {errors.username && <p id="error" style={{ color: 'red' }}>
             {`There was a problem with your ${errors.username.path}`}
@@ -83,6 +84,7 @@ const JoinUs = (props) => {
             onChange={handleChange}
             value={formData.email}
             name="email"
+            required
           />
           {errors.email && <p id="error" style={{ color: 'red' }}>
             {`There was a problem with your ${errors.email.path}`}
@@ -97,6 +99,7 @@ const JoinUs = (props) => {
             onChange={handleChange}
             value={formData.password}
             name="password"
+            required
           />
           {errors.password && <p id="error" style={{ color: 'red' }}>
             {`There was a problem with your ${errors.password.path}`}
@@ -111,6 +114,7 @@ const JoinUs = (props) => {
             onChange={handleChange}
             value={formData.passwordConfirmation}
             name="passwordConfirmation"
+            required
           />
           {errors.passwordConfirmation && <p id="error" style={{ color: 'red' }}>
             {'Does not match password'}
