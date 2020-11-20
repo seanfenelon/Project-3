@@ -577,7 +577,7 @@ mongoose.connect(
             lat: 49.3945,
             image: 'https://i.imgur.com/t8V95q7.jpg',
             user: users[0],
-            description: 'The ski resort Białka Tatrzańska – Kotelnica/​Kaniówka/​Bania is located in Lesser Poland Voivodeship (Poland). For skiing and snowboarding, there are 18.3 km of slopes available. 19 lifts transport the guests. The winter sports area is situated between the elevations of 680 and 910 m. Bialka Tatrzańska consists of three ski resorts: Kotelnica, Kaniówka and Bania. Together, they form one of the largest and most modern ski resorts in Poland. You can ski all of them with one ski pass. Further investments are planned for the future.'
+            description: 'The ski resort Białka Tatrzańska – Kotelnica/​Kaniówka/​Bania is located in Lesser Poland Voivodeship (Poland). For skiing and snowboarding, there are 18.3 km of slopes available. 19 lifts transport the guests. The winter sports area is situated between the elevations of 680 and 910 m. Bialka Tatrzańska consists of three ski resorts: Kotelnica, Kaniówka and Bania. Together, they form one of the largest and most modern ski resorts in Poland. You can ski all of them with one ski pass. Further investments are planned for the future.',
             skilifts: '19',
             openingtimes: '09:00 - 21:00',
             slopeslength: '100km',
