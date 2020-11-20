@@ -1,11 +1,11 @@
 const path = require('path')
-const dist = path.join(__dirname, 'dist');
+const dist = path.join(__dirname, 'dist')
 const express = require('express')
 const Router = require('./router')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const expressServer = express()
-const dbURI = require('./config/environment')
+const { dbURI } = require('./config/environment')
 //hmm
 
 mongoose.connect(
@@ -25,9 +25,9 @@ expressServer.use((req, res, next) => {
 expressServer.use(bodyParser.json())
 
 expressServer.use('/api', Router)
-expressServer.use('/', express.static(dist));
+expressServer.use('/', express.static(dist))
 
 expressServer.get('*', function(req, res) {
-  res.sendFile(path.join(dist, 'index.html'));
-});
+  res.sendFile(path.join(dist, 'index.html'))
+})
 expressServer.listen(8000)

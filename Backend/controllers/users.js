@@ -1,10 +1,6 @@
 const User = require('../models/users')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
-const axios = require('axios')
-const { Template } = require('webpack')
-const { faVrCardboard } = require('@fortawesome/free-solid-svg-icons')
-
 
 function getUsers(req, res) {
   User
@@ -184,7 +180,7 @@ function deleteFromFavourites(req, res) {
 
       const newfilter = []
 
-      for (i = 0; i < user.favourites.length; i++) {
+      for (let i = 0; i < user.favourites.length; i++) {
         const item = user.favourites
 
         if (item[i] === favourite) {

@@ -1,7 +1,5 @@
 const Resorts = require('../models/resorts')
 const axios = require('axios')
-const User = require('../models/users')
-
 
 // function singleProxyResort(req, res) {
 // }
