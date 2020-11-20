@@ -45,7 +45,7 @@ mongoose.connect(
             isAdmin: true,
             firstname: 'Daniel',
             lastname: 'Tockan',
-            bio: '26, software developer. Lovs to board!',
+            bio: '26, software developer. Loves to ski and board from time to time!',
             favourites: [],
             ski_or_board: '',
             favourite_region: '',

@@ -32,7 +32,7 @@ const SingleAccount = (props) => {
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Ski or Board:  {formData.ski_or_board}</li>
-        <li className="list-group-item">Favourite resort: {formData.favourite_region}</li>
+        <li className="list-group-item">Favourite region: {formData.favourite_region}</li>
         <li className="list-group-item">Hometown:  {formData.hometown}</li>
         <li className="list-group-item">Experience level:  {formData.experience}</li>
         <li className="list-group-item">Favorutie brand:  {formData.favourite_brand}</li>
