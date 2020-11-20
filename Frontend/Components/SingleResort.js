@@ -28,12 +28,6 @@ const SingleResort = (props) => {
     setActive(!isActive)
   }
 
-
-
-
-
-
-
   // console.log(text)
   useEffect(() => {
     axios.get(`/api/resorts/${props.match.params.name}`)
