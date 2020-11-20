@@ -25,9 +25,61 @@ mongoose.connect(
             passwordConfirmation: 'admin',
             image: 'https://i.imgur.com/4f1MbGO.png?1',
             isAdmin: true,
-            firstname: 'Top',
-            lastname: 'Skier',
-            bio: 'This is my bio section. I love to ski and get on it with the lads...',
+            firstname: 'Firstname',
+            lastname: 'Lastname',
+            bio: 'This is my bio section. A brief sentence about myself and my interests go here...',
+            favourites: []
+
+          },
+          {
+            username: 'Daniel94',
+            email: 'daniel@daniel.com',
+            password: 'daniel',
+            passwordConfirmation: 'daniel',
+            image: 'https://i.imgur.com/X99kVmw.jpg',
+            isAdmin: true,
+            firstname: 'Daniel',
+            lastname: 'Tockan',
+            bio: '26, software developer. Lovs to board!',
+            favourites: []
+
+          },
+          {
+            username: 'Kasjan_',
+            email: 'kasjan@kasjan.com',
+            password: 'kasjan',
+            passwordConfirmation: 'kasjan',
+            image: 'https://i.imgur.com/ZP4QyR3.jpg',
+            isAdmin: true,
+            firstname: 'Kasjan',
+            lastname: 'Hinc',
+            bio: 'Fill this out Kas...',
+            favourites: []
+
+          },
+          {
+            username: 'SeanF69',
+            email: 'sean@sean.com',
+            password: 'sean',
+            passwordConfirmation: 'sean',
+            image: 'https://i.imgur.com/9V2oI0A.jpg',
+            isAdmin: true,
+            firstname: 'Sean',
+            lastname: 'Fenelon',
+            bio: 'Fill this out Sean...',
+            favourites: []
+
+          },
+          {
+            username: 'OAlawi',
+            email: 'omar@omar.com',
+            password: 'omar',
+            passwordConfirmation: 'omar',
+            image: 'https://i.imgur.com/BErZgrT.jpg',
+            isAdmin: true,
+            firstname: 'Omar',
+            lastname: 'Alawi',
+            bio: 'Fill this out Omar...',
             favourites: []
 
           },
