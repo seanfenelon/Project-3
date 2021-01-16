@@ -1,10 +1,20 @@
 # Skii
+<p align="center">
+  <img src="screenshots/resort.png" alt="Resorts Page"/>
+</p>
 
 ## Overview
 
-My third project of the Software Engeneering Immersive bootcamp at General Assembly. Within a group of four we built a full stack website, using React, Express, MongoDB and Node. Using GitHub and Git to collaborate, we were learning the process of deploying a full stack website. 
+Skii is global ski resort database. This was the third project of the General Assembly Software Engineering Immersive.
 
-[CHECK IT OUT HERE](https://project-3-ski-sean.herokuapp.com/)
+This week-long, four-person project culminated in a full-stack application built using React, Express, MongoDB anf Node.
+
+The application has information on global ski resorts, and a user-interface encouraging a commuunity of adrenaline junkies to share their thoughts and opinions and build their profiles!
+
+
+[Check it out!](https://project-3-ski-sean.herokuapp.com/)
+
+
 
 ## Brief
 
@@ -41,11 +51,25 @@ My third project of the Software Engeneering Immersive bootcamp at General Assem
 
 ## Approach
 
+### Planning:
+
+Initial planning consisted of coming up with our idea, searching for an API, wireframing and fleshing out our concept. Some of this includes:
+
+- The various schemas and models
+- Controllers and routes
+- Information seeding (manual or external API)
+- Frontent components and user interaction
+- MVP and stretch goals
+- Version control 
+
+This initial planning ensured all team-members had a cohesive understanding of the goals and objectives and the tasks required to achieve these. Daily standups were then essential to the smooth flow of work.
+
 We decided to construct a ski resorts website where the resorts were displayed using React native maps, and the user could check out information on each resort and interact with it such as add a star rating, post comments and add a resort to their favourites. Current weather conditions must be shown for each resort. An account section would let the user change the personal information and upload an avatar.
 
-I was responsible for the front end user interface, the resorts page in the shape of cards, login and sign up page, singular resort page as well as all the backend endpoints and logic that match. However we worked together on many aspects of the project, growing our knowledge by sharing previous experience in different technologies.
+On the back-end, I collaborated on the user logic, and was responsible for the home page and resort pages on the front-end. 
 
-For our React frontend, we implemented bootstrap as our css framework, giving us good efficiency when creating the interface.
+Bootstrap was used as our CSS framework, led by Kasjan and implemented by the group.
+
 
 ## The resorts
 
@@ -54,6 +78,9 @@ After searching many ski API's, we couldn't find one to suit our needs and decid
 
 ## Home Page
 
+<p align="center">
+  <img src="screenshots/home.png" alt="Home Page"/>
+</p>
 Using MapBox, the ski resorts from our API were seeded and displayed here as markers. Longtitude and lattitude are useful here as well as in the external weather API. The user can toggle different regions of the world with a simple nav bar.
 
 
@@ -88,7 +115,12 @@ Using MapBox, the ski resorts from our API were seeded and displayed here as mar
     </MapGL>
 ```
 
+
 ## Resort Page
+
+<p align="center">
+  <img src="screenshots/single_resort.png" alt="Single Resort"/>
+</p>
 
 The singular resort page gives all the information about a given resort.
 
@@ -196,6 +228,9 @@ const schema = new mongoose.Schema({
 
 ## My account
 
+<p align="center">
+  <img src="screenshots/account.png" alt="Account Page"/>
+</p>
 The ability to edit personal infromation, avatar and check out added favourites was implemented.
 
 
@@ -339,7 +374,8 @@ mongoose.connect(
 ## Victories and Key Learnings
 
 - Successful version control through Git.
-- Collaborating on a full-stack application with a team of four. During daily standups, we discussed each others work, planned for the day and at times requested help from team members who may have worked on similar elements combining indivudal and 
+- Collaborating on a full-stack application with a team of four. During daily standups, we discussed each others work, planned for the day and at times requested help from team members who may have worked on similar elements combining indivudal and pair programming.
+- Learned Bootstrap and became more adept and reading documentation.
 
 ## Artworks
 
@@ -352,6 +388,7 @@ Icons
 
 - [Font Awesome
 ](https://fontawesome.com/)
+
 ## Contributors
 
 - [Kasjan Hinc](https://github.com/KasjanHinc)
