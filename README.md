@@ -1,5 +1,4 @@
-# Project-3
-# Ski Resorts
+# Skii
 
 ## Overview
 
@@ -335,24 +334,29 @@ mongoose.connect(
 - Star and favourite option to show active status when page is refreshed/re-visited.
 - Add a direct messaging inbox between users.
 - Show active weather on the resort cards page.
+- Ability to add and edit resorts by users.
+
+## Victories and Key Learnings
+
+- Successful version control through Git.
+- Collaborating on a full-stack application with a team of four. During daily standups, we discussed each others work, planned for the day and at times requested help from team members who may have worked on similar elements combining indivudal and 
 
 ## Artworks
 
 Background
 
-- pixabay.com
-- imgur.com
+- [Pixabay](https://pixabay.com/)
+- [imgur.com](https://imgur.com/)
 
 Icons
 
-- Font Awesome
-
+- [Font Awesome
+](https://fontawesome.com/)
 ## Contributors
 
-- Kasjan Hinc
-- Daniel Tockan
-- Sean Fenelon
-- Omar Alawi
+- [Kasjan Hinc](https://github.com/KasjanHinc)
+- [Daniel Tockan](https://github.com/DanielTockan)
+- [Sean Fenelon](https://github.com/seanfenelon)
+- [Omar Alawi](https://github.com/omaralawi1)
 
 
-[](https://project-3-ski-sean.herokuapp.com/)
