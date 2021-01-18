@@ -236,7 +236,7 @@ const schema = new mongoose.Schema({
 The ability to edit personal infromation, avatar and check out added favourites was implemented.
 
 
-- Here is axios fetching our current user, to retrieve their information
+- Here is axios fetching our current user, to retrieve their information:
 
 ```js
   useEffect(() => {
@@ -276,7 +276,7 @@ The ability to edit personal infromation, avatar and check out added favourites 
             })}
 ```
 
-- A cloudinary widget implemented to allow the user to upload an avatar in the update acccount option
+- A cloudinary widget implemented to allow the user to upload an avatar in the update acccount option.
 
 ```js
     window.cloudinary.createUploadWidget(
@@ -362,7 +362,7 @@ mongoose.connect(
 ## Bugs (Fixed)
 
 - Fixed bootstrap card scaling when variable resort information length is given.
-- Fixed image upload from cloudinary
+- Fixed image upload from cloudinary.
 
  
 
